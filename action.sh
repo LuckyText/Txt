@@ -6,8 +6,8 @@ rm 3
 rm 4
 
 time=$(date -d "-1 days" "+%m%d")
-echo "$(curl "https://cdn.jsdelivr.net/gh/pojiezhiyuanjun/freev2@master/${time}.txt")" > 1
-echo "$(curl "https://cdn.jsdelivr.net/gh/pojiezhiyuanjun/freev2@master/${time}clash.yml")" > 2.txt
+echo "$(curl "https://cdn.jsdelivr.net/gh/pojiezhiyuanjun/2023@main/${time}.txt")" > 1
+echo "$(curl "https://cdn.jsdelivr.net/gh/pojiezhiyuanjun/2023@main/${time}clash.yml")" > 2.txt
 echo "$(curl "https://cdn.jsdelivr.net/gh/paimonhub/Paimonnode@latest/clash.yaml")" > 3.txt
 echo "$(curl "https://cdn.jsdelivr.net/gh/paimonhub/Paimonnode@latest/base64")" > 4
 
