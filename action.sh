@@ -8,8 +8,8 @@ rm 4
 time=$(date -d "-1 days" "+%m%d")
 echo "$(curl "https://cdn.jsdelivr.net/gh/pojiezhiyuanjun/2023@main/${time}.txt")" > 1
 echo "$(curl "https://cdn.jsdelivr.net/gh/pojiezhiyuanjun/2023@main/${time}clash.yml")" > 2.txt
-echo "$(curl "https://cdn.jsdelivr.net/gh/paimonhub/Paimonnode@latest/clash.yaml")" > 3.txt
-echo "$(curl "https://cdn.jsdelivr.net/gh/paimonhub/Paimonnode@latest/base64")" > 4
+echo "$(curl "https://sub.pmsub.me/clash.yaml")" > 3.txt
+echo "$(curl "https://sub.pmsub.me/base64")" > 4
 
 sed -e '/ - DOMAIN-SUFFIX,admob.com,🛑 全球拦截/d' 2.txt > 2
 sed -e '/ - DOMAIN-SUFFIX,admob.com,🛑 全球拦截/d' 3.txt > 3
