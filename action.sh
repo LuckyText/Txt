@@ -5,7 +5,7 @@ rm 2
 rm 3
 rm 4
 
-time=$(date -d "-1 days" "+%m%d")
+time=$(date -d "-2 days" "+%m%d")
 if curl -sL --fail "https://cdn.jsdelivr.net/gh/pojiezhiyuanjun/2023@main/${time}.txt" -o 1.txt; then
 cp 1.txt 1
 fi
