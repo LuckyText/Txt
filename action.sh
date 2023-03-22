@@ -6,16 +6,23 @@ rm 3
 rm 4
 
 time=$(date -d "-1 days" "+%m%d")
-curl -sL --fail "https://cdn.jsdelivr.net/gh/pojiezhiyuanjun/2023@main/${time}.txt" -o 1
+if curl -sL --fail "https://cdn.jsdelivr.net/gh/pojiezhiyuanjun/2023@main/${time}.txt" -o 1.txt; then
+cp 1.txt 1
+fi
+
 if curl -sL --fail "https://cdn.jsdelivr.net/gh/pojiezhiyuanjun/2023@main/${time}clash.yml" -o 2.txt; then
 sed -e '/ - DOMAIN-SUFFIX,admob.com,🛑 全球拦截/d' 2.txt > 2
-rm 2.txt
 fi
+
 if curl -sL --fail "https://sub.pmsub.me/clash.yaml" -o 3.txt; then
 sed -e '/ - DOMAIN-SUFFIX,admob.com,🛑 全球拦截/d' 3.txt > 3
-rm 3.txt
 fi
-curl -sL --fail "https://sub.pmsub.me/base64" -o 4
+
+if curl -sL --fail "https://sub.pmsub.me/base64" -o 4.txt; then
+cp 4.txt 4
+fi
+
+rm 1.txt 2.txt 3.txt 4.txt
 
 git config --global user.name '111'
 git config --global user.email '345@ak47.com'
