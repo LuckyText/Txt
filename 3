@@ -5,31 +5,31 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: 「节点冠名招商 @nodpai」🇧🇷 BR 01, server: wnd2.shabijichang.com, port: 80, type: vmess, uuid: c458695d-6908-45c3-9512-e0c46418454c, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: wnd2.shabijichang.com}}, udp: true}
-  - {name: 「starnet，老牌公益机场」🇺🇸 US 01, server: 107.167.16.85, port: 443, type: vmess, uuid: 7640a1e7-9701-428e-a4b2-19b3e7dd6f9f, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: www.51109057.xyz, network: ws, ws-opts: {path: /path/080822272914}, udp: true}
+  - {name: 「节点冠名招商 @nodpai」🇰🇷 KR 01, server: 43.202.52.215, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: 「starnet，老牌公益机场」🇸🇬 SG 01, server: xjp2.shabijichang.com, port: 80, type: vmess, uuid: 56278a1a-c7cc-459f-b00c-3037e4f99590, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: xjp2.shabijichang.com}}, udp: true}
 proxy-groups:
   - name: 🔰 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 「节点冠名招商 @nodpai」🇧🇷 BR 01
-      - 「starnet，老牌公益机场」🇺🇸 US 01
+      - 「节点冠名招商 @nodpai」🇰🇷 KR 01
+      - 「starnet，老牌公益机场」🇸🇬 SG 01
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 「节点冠名招商 @nodpai」🇧🇷 BR 01
-      - 「starnet，老牌公益机场」🇺🇸 US 01
+      - 「节点冠名招商 @nodpai」🇰🇷 KR 01
+      - 「starnet，老牌公益机场」🇸🇬 SG 01
   - name: 🎥 NETFLIX
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 「节点冠名招商 @nodpai」🇧🇷 BR 01
-      - 「starnet，老牌公益机场」🇺🇸 US 01
+      - 「节点冠名招商 @nodpai」🇰🇷 KR 01
+      - 「starnet，老牌公益机场」🇸🇬 SG 01
   - name: ⛔️ 广告拦截
     type: select
     proxies:
@@ -48,8 +48,8 @@ proxy-groups:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 「节点冠名招商 @nodpai」🇧🇷 BR 01
-      - 「starnet，老牌公益机场」🇺🇸 US 01
+      - 「节点冠名招商 @nodpai」🇰🇷 KR 01
+      - 「starnet，老牌公益机场」🇸🇬 SG 01
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -60,23 +60,23 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
-      - 「节点冠名招商 @nodpai」🇧🇷 BR 01
-      - 「starnet，老牌公益机场」🇺🇸 US 01
+      - 「节点冠名招商 @nodpai」🇰🇷 KR 01
+      - 「starnet，老牌公益机场」🇸🇬 SG 01
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
-      - 「节点冠名招商 @nodpai」🇧🇷 BR 01
-      - 「starnet，老牌公益机场」🇺🇸 US 01
+      - 「节点冠名招商 @nodpai」🇰🇷 KR 01
+      - 「starnet，老牌公益机场」🇸🇬 SG 01
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 「节点冠名招商 @nodpai」🇧🇷 BR 01
-      - 「starnet，老牌公益机场」🇺🇸 US 01
+      - 「节点冠名招商 @nodpai」🇰🇷 KR 01
+      - 「starnet，老牌公益机场」🇸🇬 SG 01
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -92,8 +92,8 @@ proxy-groups:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 「节点冠名招商 @nodpai」🇧🇷 BR 01
-      - 「starnet，老牌公益机场」🇺🇸 US 01
+      - 「节点冠名招商 @nodpai」🇰🇷 KR 01
+      - 「starnet，老牌公益机场」🇸🇬 SG 01
 rules:
  - DOMAIN-SUFFIX,local,🎯 全球直连
  - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
