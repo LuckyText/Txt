@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export LANG=C.UTF-8
+
 time=$(date -d "-1 days" "+%m%d")
 if curl -sL --fail "https://cdn.jsdelivr.net/gh/pojiezhiyuanjun/2023@main/${time}.txt" -o 1.txt; then
 cp 1.txt 1
