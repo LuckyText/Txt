@@ -15,7 +15,7 @@ run() {
     fi
     
     if curl -sL --fail "https://nodefree.org/dy/${year}/${month}/${year}${month}${day}.yaml" -o 3.txt; then
-    sed -e '/ - DOMAIN-SUFFIX,admob.com,🛑 全球拦截/d' 3.txt > 3
+    sed -e '/  - DOMAIN-SUFFIX,admob.com,🍃 应用净化/d' 3.txt > 3
     fi
     
     if curl -sL --fail "https://nodefree.org/dy/${year}/${month}/${year}${month}${day}.txt" -o 4.txt; then
