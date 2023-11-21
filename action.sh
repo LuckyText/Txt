@@ -42,3 +42,25 @@ git add .
 git commit -m "update"
 git push
 
+
+curl -sL --fail https://purge.jsdelivr.net/gh/luckytext/txt@master/1
+curl -sL --fail https://purge.jsdelivr.net/gh/luckytext/txt@master/2
+curl -sL --fail https://purge.jsdelivr.net/gh/luckytext/txt@master/3
+curl -sL --fail https://purge.jsdelivr.net/gh/luckytext/txt@master/4
+curl -sL --fail https://purge.jsdelivr.net/gh/luckytext/txt@master/5
+curl -sL --fail https://purge.jsdelivr.net/gh/luckytext/txt@master/6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
