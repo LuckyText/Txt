@@ -15,35 +15,29 @@ dns:
     - tls://1.0.0.1:853
     - tls://dns.google:853
 proxies:
-  - {name: HK_香港, server: 199.15.76.35, port: 443, type: vmess, uuid: 64424354-f4ff-42a0-8884-8f52f2bb7235, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: "/changding-tls1?ed=2048", headers: {Host: hk-300.changding.tech}}}
-  - {name: AU_澳大利亚->US_美国, server: 192.65.217.247, port: 443, type: trojan, password: b59ee60f-9fa4-4770-b6a7-288620147f60, sni: k5us2.yfjc.sbs, skip-cert-verify: false, network: ws, ws-opts: {path: /yfjc/kus2, headers: {Host: k5us2.yfjc.sbs}}}
-  - {name: US_美国->UA_乌克兰, server: glasco.fx-trader.shop, port: 80, type: vmess, uuid: f256a3ae-0f85-4a1d-d0cd-2d0b4b73f4f1, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: v3ra3do.wakeuptimerap.shop}}}
-  - {name: AU_澳大利亚->US_美国 2, server: 192.65.217.200, port: 443, type: trojan, password: b59ee60f-9fa4-4770-b6a7-288620147f60, sni: k6us1.yfjc.sbs, skip-cert-verify: false, network: ws, ws-opts: {path: /yfjc/kus1, headers: {Host: k6us1.yfjc.sbs}}}
-  - {name: US_美国, server: 54.213.46.0, port: 22222, type: trojan, password: telegram-id-directvpn, sni: trj.rollingnext.co.uk, skip-cert-verify: false}
-  - {name: SC_塞舌尔->HK_香港, server: 156.251.226.106, port: 1111, type: vmess, uuid: 64424354-f4ff-42a0-8884-8f52f2bb7235, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: "/changding-tls0?ed=2048", headers: {Host: hk-300.changding.tech}}}
-  - {name: US_美国->RU_俄罗斯联邦, server: cdn-16.cdn2cdn.com, port: 2083, type: trojan, password: gviRoLVUKA5kBX2M0gJSvg, sni: cdn16.cdn2cdn.com, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: cdn16.cdn2cdn.com}}}
-  - {name: US_美国->DE_德国, server: 104.21.69.44, port: 443, type: trojan, password: Nu5EqwcJ2OCuvKAcSQeGdg, sni: cdn-22.gsmxreality.com, skip-cert-verify: false}
-  - {name: PS_巴勒斯坦->TR_土耳其, server: 82.213.5.50, port: 80, type: vmess, uuid: f21bcdb6-5dc6-4c4b-9a34-3b185f6747c4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /@forwardv2ray, headers: {Host: tabyan205.serveftp.com}}}
-  - {name: US_美国 2, server: 158.101.7.8, port: 80, type: vmess, uuid: 95b45c49-f5c0-4959-bb64-2b8fbc4a869c, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
-  - {name: US_美国->DE_德国 2, server: 172.67.204.84, port: 443, type: trojan, password: Nu5EqwcJ2OCuvKAcSQeGdg, sni: cdn-22.gsmxreality.com, skip-cert-verify: false}
-  - {name: LU_卢森堡, server: 202.78.162.6, port: 80, type: vmess, uuid: 66fef53b-1b57-466d-89a4-bd99b90f6473, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /@forwardv2ray, headers: {Host: irisoft.servecounterstrike.com}}}
+  - {name: UA_乌克兰->TR_土耳其, server: 185.158.211.186, port: 80, type: vmess, uuid: b82493e3-07b4-4cf2-b585-965575cfeb32, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /@forwardv2ray, headers: {Host: softiri.serveirc.com}}}
+  - {name: GB_英国, server: 172.99.190.109, port: 443, type: vmess, uuid: 03fcc618-b93d-6796-6aed-8a38c975d581, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: linkvws}}
+  - {name: CN_中国->US_美国, server: xibaozi.19890604.day, port: 10837, type: trojan, password: 66c899df-785c-4290-9c10-74a62b3ddd2b, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: false}
+  - {name: CN_中国->CZ_捷克, server: xibaozi.19890604.day, port: 10846, type: trojan, password: 66c899df-785c-4290-9c10-74a62b3ddd2b, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: false}
+  - {name: CN_中国->US_美国 2, server: xibaozi.19890604.day, port: 10838, type: trojan, password: 66c899df-785c-4290-9c10-74a62b3ddd2b, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: false}
+  - {name: CN_中国->UA_乌克兰, server: xibaozi.19890604.day, port: 10845, type: trojan, password: 66c899df-785c-4290-9c10-74a62b3ddd2b, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: false}
+  - {name: CN_中国->US_美国 3, server: xibaozi.19890604.day, port: 10850, type: trojan, password: 66c899df-785c-4290-9c10-74a62b3ddd2b, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: false}
+  - {name: CN_中国->AT_奥地利, server: xibaozi.19890604.day, port: 10848, type: trojan, password: 66c899df-785c-4290-9c10-74a62b3ddd2b, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: false}
+  - {name: CN_中国->US_美国 4, server: xibaozi.19890604.day, port: 10847, type: trojan, password: 66c899df-785c-4290-9c10-74a62b3ddd2b, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: false}
 proxy-groups:
   - name: 节点选择
     type: select
     proxies:
       - DIRECT
-      - HK_香港
-      - AU_澳大利亚->US_美国
-      - US_美国->UA_乌克兰
-      - AU_澳大利亚->US_美国 2
-      - US_美国
-      - SC_塞舌尔->HK_香港
-      - US_美国->RU_俄罗斯联邦
-      - US_美国->DE_德国
-      - PS_巴勒斯坦->TR_土耳其
-      - US_美国 2
-      - US_美国->DE_德国 2
-      - LU_卢森堡
+      - UA_乌克兰->TR_土耳其
+      - GB_英国
+      - CN_中国->US_美国
+      - CN_中国->CZ_捷克
+      - CN_中国->US_美国 2
+      - CN_中国->UA_乌克兰
+      - CN_中国->US_美国 3
+      - CN_中国->AT_奥地利
+      - CN_中国->US_美国 4
   - name: 全球直连
     type: select
     proxies:
@@ -59,18 +53,15 @@ proxy-groups:
     proxies:
       - 节点选择
       - 全球直连
-      - HK_香港
-      - AU_澳大利亚->US_美国
-      - US_美国->UA_乌克兰
-      - AU_澳大利亚->US_美国 2
-      - US_美国
-      - SC_塞舌尔->HK_香港
-      - US_美国->RU_俄罗斯联邦
-      - US_美国->DE_德国
-      - PS_巴勒斯坦->TR_土耳其
-      - US_美国 2
-      - US_美国->DE_德国 2
-      - LU_卢森堡
+      - UA_乌克兰->TR_土耳其
+      - GB_英国
+      - CN_中国->US_美国
+      - CN_中国->CZ_捷克
+      - CN_中国->US_美国 2
+      - CN_中国->UA_乌克兰
+      - CN_中国->US_美国 3
+      - CN_中国->AT_奥地利
+      - CN_中国->US_美国 4
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,全球直连
   - DOMAIN-SUFFIX,ip6-localhost,全球直连
