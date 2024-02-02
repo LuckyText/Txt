@@ -1,296 +1,97 @@
-####################################
-# 鍒涘缓鑰咃細v2rayse.com
-# 瀹㈡埛绔�锛欳lash
-# 鍒涘缓鏃堕棿锛�2024-01-25 09:40:02
-# 浣跨敤妯＄増锛歏2RaySE 榛樿�ゆā鐗�
-# 鑺傜偣鏁伴噺锛�23
-####################################
-mixed-port: 7890
+port: 7890
+socks-port: 7891
 allow-lan: true
+mode: Rule
 log-level: info
-external-controller: 0.0.0.0:9090
+external-controller: :9090
 dns:
   enabled: true
-  listen: 0.0.0.0:1053
-  ipv6: true
-  default-nameserver:
-    - 223.5.5.5
-    - 114.114.114.114
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-filter:
-    - '*.lan'
-    - '*.linksys.com'
-    - '*.linksyssmartwifi.com'
-    - swscan.apple.com
-    - mesu.apple.com
-    - '*.msftconnecttest.com'
-    - '*.msftncsi.com'
-    - time.*.com
-    - time.*.gov
-    - time.*.edu.cn
-    - time.*.apple.com
-    - time1.*.com
-    - time2.*.com
-    - time3.*.com
-    - time4.*.com
-    - time5.*.com
-    - time6.*.com
-    - time7.*.com
-    - ntp.*.com
-    - ntp.*.com
-    - ntp1.*.com
-    - ntp2.*.com
-    - ntp3.*.com
-    - ntp4.*.com
-    - ntp5.*.com
-    - ntp6.*.com
-    - ntp7.*.com
-    - '*.time.edu.cn'
-    - '*.ntp.org.cn'
-    - +.pool.ntp.org
-    - time1.cloud.tencent.com
-    - +.music.163.com
-    - '*.126.net'
-    - musicapi.taihe.com
-    - music.taihe.com
-    - songsearch.kugou.com
-    - trackercdn.kugou.com
-    - '*.kuwo.cn'
-    - api-jooxtt.sanook.com
-    - api.joox.com
-    - joox.com
-    - +.y.qq.com
-    - +.music.tc.qq.com
-    - aqqmusic.tc.qq.com
-    - +.stream.qqmusic.qq.com
-    - '*.xiami.com'
-    - +.music.migu.cn
-    - +.srv.nintendo.net
-    - +.stun.playstation.net
-    - xbox.*.microsoft.com
-    - +.xboxlive.com
-    - localhost.ptlogin2.qq.com
-    - proxy.golang.org
-    - stun.*.*
-    - stun.*.*.*
-    - '*.mcdn.bilivideo.cn'
   nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-  fallback-filter:
-    geoip: false
-    ipcidr:
-      - 240.0.0.0/4
-      - 0.0.0.0/32
-
+    - 119.29.29.29
+    - 223.5.5.5
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
 proxies:
-  - {"name":"馃嚚馃嚦_CN_涓�鍥�->馃嚘馃嚬_AT_濂ュ湴鍒�","type":"trojan","server":"xibaozi.19890604.day","port":10848,"udp":true,"password":"3e5d1046-5807-4b79-8397-31a006f546d1","sni":"cloudflare.node-ssl.cdn-alibaba.com","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"馃嚭馃嚫_US_缇庡浗->馃嚛馃嚜_DE_寰峰浗","type":"vmess","server":"104.31.16.104","port":8080,"cipher":"auto","uuid":"3a6752b4-8353-4172-85b1-32202116714d","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"asan3.azad1.tech"}}}
-  - {"name":"馃嚭馃嚫_US_缇庡浗_1","type":"vmess","server":"pt2-vmess.sshmax.xyz","port":80,"cipher":"auto","uuid":"099b5b7a-9d71-43cd-80e3-b8fbe1cc2695","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"pt2-vmess.sshmax.xyz"}}}
-  - {"name":"馃嚭馃嚫_US_缇庡浗_2","type":"trojan","server":"89.116.161.133","port":443,"udp":true,"password":"56e1f11c-1217-46ab-b127-6afbc23bafba","sni":"p1us1.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/us1"}}
-  - {"name":"馃嚭馃嚫_US_缇庡浗_3","type":"vmess","server":"173.245.58.51","port":443,"cipher":"aes-128-gcm","uuid":"12d7e57b-9fc8-41e0-9b32-f503dce10c1c","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/fdczvws","headers":{"host":"godofwar2020.colocrossing.sbs"}}}
-  - {"name":"馃嚭馃嚫_US_缇庡浗_4","type":"vmess","server":"www.coldstone.club","port":8080,"cipher":"auto","uuid":"22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"www.coldstone.club"}}}
-  - {"name":"馃嚭馃嚫_US_缇庡浗_5","type":"vmess","server":"cold-dawn-9246.fly.dev","port":443,"cipher":"auto","uuid":"ea4909ef-7ca6-4b46-bf2e-6c07896ef338","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/ea4909ef-7ca6-4b46-bf2e-6c07896ef338-vm","headers":{"host":"cold-dawn-9246.fly.dev"}}}
-  - {"name":"馃嚭馃嚫_US_缇庡浗_6","type":"vmess","server":"172.67.217.144","port":80,"cipher":"auto","uuid":"85674552-ce41-44d9-bb2a-50f76450b3d8","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"lv1.xv2ray.net"}}}
-  - {"name":"馃嚠馃嚩_IQ_浼婃媺鍏�->馃嚬馃嚪_TR_鍦熻�冲叾","type":"vmess","server":"130.193.166.2","port":443,"cipher":"auto","uuid":"7682b778-b64b-408b-8fb2-61d7c7fc43e5","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/@forwardv2ray","headers":{"host":"soft8989.redirectme.net"}}}
-  - {"name":"馃嚠馃嚜_IE_鐖卞皵鍏�","type":"trojan","server":"52.214.208.44","port":22222,"udp":true,"password":"telegram-id-privatevpns","sni":"trojan.miwan.co.uk","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"馃嚭馃嚫_US_缇庡浗_7","type":"vmess","server":"www.crispyrainbow.biz","port":8080,"cipher":"auto","uuid":"22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"www.crispyrainbow.biz"}}}
-  - {"name":"馃嚞馃嚠_GI_鐩村竷缃楅檧_1","type":"vmess","server":"95.164.8.106","port":80,"cipher":"auto","uuid":"c1ebe8c7-bdd9-4aca-a2f7-01bea79279b3","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"ee2-vmess.sshmax.xyz"}}}
-  - {"name":"馃嚛馃嚜_DE_寰峰浗_1","type":"trojan","server":"5.104.108.120","port":443,"udp":true,"password":"56e1f11c-1217-46ab-b127-6afbc23bafba","sni":"20-24-33-134.nhost.00cdn.com","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"馃嚞馃嚠_GI_鐩村竷缃楅檧_2","type":"vmess","server":"ee2-vmess.sshmax.xyz","port":80,"cipher":"auto","uuid":"c1ebe8c7-bdd9-4aca-a2f7-01bea79279b3","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"ee2-vmess.sshmax.xyz"}}}
-  - {"name":"馃嚭馃嚘_UA_涔屽厠鍏�","type":"vmess","server":"185.158.211.186","port":80,"cipher":"auto","uuid":"b82493e3-07b4-4cf2-b585-965575cfeb32","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/@forwardv2ray","headers":{"host":"softiri.serveirc.com"}}}
-  - {"name":"馃嚭馃嚫_US_缇庡浗_8","type":"vmess","server":"94.131.10.135","port":80,"cipher":"auto","uuid":"099b5b7a-9d71-43cd-80e3-b8fbe1cc2695","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/vmess"}}
-  - {"name":"馃嚢馃嚪_KR_闊╁浗","type":"trojan","server":"103.214.68.57","port":10003,"udp":true,"password":"6x8HcghsjS","sni":"yes998.chickenkiller.com","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"馃嚭馃嚫_US_缇庡浗_9","type":"vmess","server":"104.17.184.241","port":2095,"cipher":"auto","uuid":"0f42a063-315b-4524-8501-469c51838bb6","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"mgone_cdn.yunjisuan.cf"}}}
-  - {"name":"馃嚚馃嚦_CN_涓�鍥�->馃嚞馃嚙_GB_鑻卞浗","type":"trojan","server":"cn22.firewoodzz.com","port":35008,"udp":true,"password":"7c266797-c2f6-43cf-8cdb-3e3a8e67de8b","sni":"updates.sub-nthu.com","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"馃嚭馃嚫_US_缇庡浗_10","type":"vmess","server":"158.101.7.8","port":80,"cipher":"auto","uuid":"95b45c49-f5c0-4959-bb64-2b8fbc4a869c","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/"}}
-  - {"name":"馃嚦馃嚤_NL_鑽峰叞","type":"vmess","server":"91.242.229.69","port":2086,"cipher":"auto","uuid":"88c216b8-56c6-4f34-bcfd-e198ce11f7d6","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"nl1.xv2ray.net"}}}
-  - {"name":"馃嚝馃嚪_FR_娉曞浗","type":"trojan","server":"35.181.194.132","port":22222,"udp":true,"password":"telegram-id-privatevpns","sni":"trojan.miwan.co.uk","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"馃嚛馃嚜_DE_寰峰浗_2","type":"trojan","server":"5.104.108.109","port":443,"udp":true,"password":"56e1f11c-1217-46ab-b127-6afbc23bafba","sni":"20-24-33-134.nhost.00cdn.com","skip-cert-verify":true,"network":"tcp"}
+  - {name: 馃嚭馃嚫 _US_缇庡浗, server: 35.87.209.22, port: 13489, client-fingerprint: chrome, type: vmess, uuid: 61761e55-dff5-4f94-f75f-b0a4718bba98, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: http, http-opts: {method: GET, path: [/]}}
+  - {name: 馃嚭馃嚫 _CN_涓�鍥�->馃嚭馃嚫_US_缇庡浗, server: xibaozi.19890604.day, port: 10847, client-fingerprint: chrome, type: trojan, password: f0883703-3161-4d18-b243-4b2ca0647a05, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: false}
+  - {name: 馃嚭馃嚫 _US_缇庡浗 2, server: 172.67.212.114, port: 8080, client-fingerprint: chrome, type: vmess, uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.crispyrainbow.biz}}}
+  - {name: 馃嚭馃嚫 _US_缇庡浗->馃嚠馃嚪_IR_浼婃湕, server: www.darkroom.lol, port: 8080, client-fingerprint: chrome, type: vmess, uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.darkroom.lol}}}
+  - {name: 馃嚭馃嚫 _US_缇庡浗 3, server: 104.20.231.30, port: 80, client-fingerprint: chrome, type: vmess, uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: my1.tooters.ir}}}
+  - {name: 馃嚭馃嚫 _CN_涓�鍥�->馃嚭馃嚫_US_缇庡浗 2, server: xibaozi.19890604.day, port: 10850, client-fingerprint: chrome, type: trojan, password: f0883703-3161-4d18-b243-4b2ca0647a05, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: false}
+  - {name: 馃嚞馃嚙 _GB_鑻卞浗, server: 13.42.93.180, port: 22222, client-fingerprint: chrome, type: trojan, password: telegram-id-privatevpns, sni: trojan.miwan.co.uk, skip-cert-verify: false}
+  - {name: 馃嚭馃嚫 _US_缇庡浗->馃嚠馃嚪_IR_浼婃湕 2, server: www.crispyrainbow.biz, port: 8080, client-fingerprint: chrome, type: vmess, uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.crispyrainbow.biz}}}
+  - {name: 馃嚭馃嚫 _US_缇庡浗 4, server: server2.beheshtbaneh.com, port: 8880, client-fingerprint: chrome, type: vmess, uuid: 8420ee38-4cf6-4d79-a9ec-2731207cf83a, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: server2.beheshtbaneh.com}}}
+  - {name: 馃嚚馃嚘 _CA_鍔犳嬁澶�, server: 108.181.2.154, port: 33445, client-fingerprint: chrome, type: vmess, uuid: 7de8d7aa-ae4a-4d75-82f4-2e8b46fc0290, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false}
+  - {name: 馃嚚馃嚘 _CA_鍔犳嬁澶� 2, server: 108.181.5.18, port: 18657, client-fingerprint: chrome, type: vmess, uuid: 636ba072-493e-4235-b7a8-822bd4e340d5, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false}
+  - {name: 馃嚭馃嚫 _US_缇庡浗 5, server: www.coldstone.club, port: 8080, client-fingerprint: chrome, type: vmess, uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.coldstone.club}}}
+  - {name: 馃嚭馃嚫 _US_缇庡浗 6, server: 44.237.40.234, port: 22222, client-fingerprint: chrome, type: trojan, password: telegram-id-directvpn, sni: trj.rollingnext.co.uk, skip-cert-verify: false}
+  - {name: 馃嚭馃嚫 _US_缇庡浗->馃嚨馃嚦_PN_鐨�鐗瑰嚡鎭�, server: 173.249.197.176, port: 443, client-fingerprint: chrome, type: vmess, uuid: e4c9dc48-f9dc-4d9b-9318-a3933d113736, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false}
+  - {name: 馃嚭馃嚫 _US_缇庡浗 7, server: 104.21.83.10, port: 8080, client-fingerprint: chrome, type: vmess, uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.coldstone.club}}}
+  - {name: 馃嚭馃嚫 _US_缇庡浗 8, server: 172.67.166.190, port: 8080, client-fingerprint: chrome, type: vmess, uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.crispyrainbow.online}}}
+  - {name: 馃嚭馃嚫 _US_缇庡浗 9, server: cold-dawn-9246.fly.dev, port: 443, client-fingerprint: chrome, type: vmess, uuid: ea4909ef-7ca6-4b46-bf2e-6c07896ef338, alterId: 0, cipher: auto, tls: true, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /ea4909ef-7ca6-4b46-bf2e-6c07896ef338-vm, headers: {Host: cold-dawn-9246.fly.dev}}}
+  - {name: 馃嚭馃嚫 _CN_涓�鍥�->馃嚭馃嚫_US_缇庡浗 3, server: xibaozi.19890604.day, port: 10838, client-fingerprint: chrome, type: trojan, password: f0883703-3161-4d18-b243-4b2ca0647a05, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: false}
+  - {name: 馃嚚馃嚳 _CN_涓�鍥�->馃嚚馃嚳_CZ_鎹峰厠, server: xibaozi.19890604.day, port: 10846, client-fingerprint: chrome, type: trojan, password: f0883703-3161-4d18-b243-4b2ca0647a05, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: false}
+  - {name: 馃嚭馃嚘 _CN_涓�鍥�->馃嚭馃嚘_UA_涔屽厠鍏�, server: xibaozi.19890604.day, port: 10845, client-fingerprint: chrome, type: trojan, password: f0883703-3161-4d18-b243-4b2ca0647a05, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: false}
+  - {name: 馃嚭馃嚫 _US_缇庡浗 10, server: www.crispyrainbow.online, port: 8080, client-fingerprint: chrome, type: vmess, uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.crispyrainbow.online}}}
+  - {name: 馃嚭馃嚫 _US_缇庡浗 11, server: www.blueberrywindow.online, port: 8080, client-fingerprint: chrome, type: vmess, uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.blueberrywindow.online}}}
+  - {name: 馃嚘馃嚪 _AR_闃挎牴寤�->馃嚦馃嚤_NL_鑽峰叞, server: 87.120.164.7, port: 80, client-fingerprint: chrome, type: vmess, uuid: 75916879-adcf-45b3-98d8-54a2412470b5, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /@forwardv2ray, headers: {Host: sahar55.serveirc.com}}}
+  - {name: 馃嚛馃嚜 _DE_寰峰浗, server: 18.157.63.148, port: 22222, client-fingerprint: chrome, type: trojan, password: telegram-id-privatevpns, sni: trojan.miwan.co.uk, skip-cert-verify: false}
+  - {name: 馃嚭馃嚫 _US_缇庡浗 12, server: server21.beheshtbaneh.com, port: 8880, client-fingerprint: chrome, type: vmess, uuid: 11cd2b93-a102-49a2-97be-27c33c743618, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: server21.beheshtbaneh.com}}}
+  - {name: 馃嚭馃嚫 _US_缇庡浗 13, server: 104.21.82.183, port: 8880, client-fingerprint: chrome, type: vmess, uuid: c5626b16-4c57-4d7e-8668-6b1ecda5c8b5, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: server6.beheshtbaneh.com}}}
+  - {name: 馃嚭馃嚫 _US_缇庡浗 14, server: server12.beheshtbaneh.com, port: 8880, client-fingerprint: chrome, type: vmess, uuid: 39c03e6d-9efd-4e5a-8851-cd4ed0ec303c, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: server12.beheshtbaneh.com}}}
+  - {name: 馃嚭馃嚫 _US_缇庡浗->馃嚨馃嚦_PN_鐨�鐗瑰嚡鎭� 2, server: pitcairn.ednovas.org, port: 443, client-fingerprint: chrome, type: vmess, uuid: e4c9dc48-f9dc-4d9b-9318-a3933d113736, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false}
+  - {name: 馃嚘馃嚬 _CN_涓�鍥�->馃嚘馃嚬_AT_濂ュ湴鍒�, server: xibaozi.19890604.day, port: 10848, client-fingerprint: chrome, type: trojan, password: f0883703-3161-4d18-b243-4b2ca0647a05, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: false}
+  - {name: 馃嚭馃嚫 _CN_涓�鍥�->馃嚭馃嚫_US_缇庡浗 4, server: xibaozi.19890604.day, port: 10837, client-fingerprint: chrome, type: trojan, password: f0883703-3161-4d18-b243-4b2ca0647a05, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: false}
+  - {name: 馃嚭馃嚫 _US_缇庡浗 15, server: 104.21.23.176, port: 8080, client-fingerprint: chrome, type: vmess, uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0, alterId: 0, cipher: auto, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.crispyrainbow.biz}}}
+  - {name: 馃嚞馃嚙 _GB_鑻卞浗 2, server: 198.244.190.189, port: 443, client-fingerprint: chrome, type: trojan, password: 81dfb458-9a26-486a-a0da-914c380459c6, skip-cert-verify: false}
+  - {name: 馃嚛馃嚜 _DE_寰峰浗 2, server: 18.156.123.121, port: 22222, client-fingerprint: chrome, type: trojan, password: telegram-id-privatevpns, sni: trojan.miwan.co.uk, skip-cert-verify: false}
 proxy-groups:
   - name: 馃殌 鑺傜偣閫夋嫨
     type: select
     proxies:
-      - 鈾伙笍 鑷�鍔ㄩ�夋嫨
       - DIRECT
-      - 馃嚚馃嚦_CN_涓�鍥�->馃嚘馃嚬_AT_濂ュ湴鍒�
-      - 馃嚭馃嚫_US_缇庡浗->馃嚛馃嚜_DE_寰峰浗
-      - 馃嚭馃嚫_US_缇庡浗_1
-      - 馃嚭馃嚫_US_缇庡浗_2
-      - 馃嚭馃嚫_US_缇庡浗_3
-      - 馃嚭馃嚫_US_缇庡浗_4
-      - 馃嚭馃嚫_US_缇庡浗_5
-      - 馃嚭馃嚫_US_缇庡浗_6
-      - 馃嚠馃嚩_IQ_浼婃媺鍏�->馃嚬馃嚪_TR_鍦熻�冲叾
-      - 馃嚠馃嚜_IE_鐖卞皵鍏�
-      - 馃嚭馃嚫_US_缇庡浗_7
-      - 馃嚞馃嚠_GI_鐩村竷缃楅檧_1
-      - 馃嚛馃嚜_DE_寰峰浗_1
-      - 馃嚞馃嚠_GI_鐩村竷缃楅檧_2
-      - 馃嚭馃嚘_UA_涔屽厠鍏�
-      - 馃嚭馃嚫_US_缇庡浗_8
-      - 馃嚢馃嚪_KR_闊╁浗
-      - 馃嚭馃嚫_US_缇庡浗_9
-      - 馃嚚馃嚦_CN_涓�鍥�->馃嚞馃嚙_GB_鑻卞浗
-      - 馃嚭馃嚫_US_缇庡浗_10
-      - 馃嚦馃嚤_NL_鑽峰叞
-      - 馃嚝馃嚪_FR_娉曞浗
-      - 馃嚛馃嚜_DE_寰峰浗_2
-  - name: 鈾伙笍 鑷�鍔ㄩ�夋嫨
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
-      - 馃嚚馃嚦_CN_涓�鍥�->馃嚘馃嚬_AT_濂ュ湴鍒�
-      - 馃嚭馃嚫_US_缇庡浗->馃嚛馃嚜_DE_寰峰浗
-      - 馃嚭馃嚫_US_缇庡浗_1
-      - 馃嚭馃嚫_US_缇庡浗_2
-      - 馃嚭馃嚫_US_缇庡浗_3
-      - 馃嚭馃嚫_US_缇庡浗_4
-      - 馃嚭馃嚫_US_缇庡浗_5
-      - 馃嚭馃嚫_US_缇庡浗_6
-      - 馃嚠馃嚩_IQ_浼婃媺鍏�->馃嚬馃嚪_TR_鍦熻�冲叾
-      - 馃嚠馃嚜_IE_鐖卞皵鍏�
-      - 馃嚭馃嚫_US_缇庡浗_7
-      - 馃嚞馃嚠_GI_鐩村竷缃楅檧_1
-      - 馃嚛馃嚜_DE_寰峰浗_1
-      - 馃嚞馃嚠_GI_鐩村竷缃楅檧_2
-      - 馃嚭馃嚘_UA_涔屽厠鍏�
-      - 馃嚭馃嚫_US_缇庡浗_8
-      - 馃嚢馃嚪_KR_闊╁浗
-      - 馃嚭馃嚫_US_缇庡浗_9
-      - 馃嚚馃嚦_CN_涓�鍥�->馃嚞馃嚙_GB_鑻卞浗
-      - 馃嚭馃嚫_US_缇庡浗_10
-      - 馃嚦馃嚤_NL_鑽峰叞
-      - 馃嚝馃嚪_FR_娉曞浗
-      - 馃嚛馃嚜_DE_寰峰浗_2
-  - name: 馃實 鍥藉�栧獟浣�
-    type: select
-    proxies:
-      - 馃殌 鑺傜偣閫夋嫨
-      - 鈾伙笍 鑷�鍔ㄩ�夋嫨
-      - 馃幆 鍏ㄧ悆鐩磋繛
-      - 馃嚚馃嚦_CN_涓�鍥�->馃嚘馃嚬_AT_濂ュ湴鍒�
-      - 馃嚭馃嚫_US_缇庡浗->馃嚛馃嚜_DE_寰峰浗
-      - 馃嚭馃嚫_US_缇庡浗_1
-      - 馃嚭馃嚫_US_缇庡浗_2
-      - 馃嚭馃嚫_US_缇庡浗_3
-      - 馃嚭馃嚫_US_缇庡浗_4
-      - 馃嚭馃嚫_US_缇庡浗_5
-      - 馃嚭馃嚫_US_缇庡浗_6
-      - 馃嚠馃嚩_IQ_浼婃媺鍏�->馃嚬馃嚪_TR_鍦熻�冲叾
-      - 馃嚠馃嚜_IE_鐖卞皵鍏�
-      - 馃嚭馃嚫_US_缇庡浗_7
-      - 馃嚞馃嚠_GI_鐩村竷缃楅檧_1
-      - 馃嚛馃嚜_DE_寰峰浗_1
-      - 馃嚞馃嚠_GI_鐩村竷缃楅檧_2
-      - 馃嚭馃嚘_UA_涔屽厠鍏�
-      - 馃嚭馃嚫_US_缇庡浗_8
-      - 馃嚢馃嚪_KR_闊╁浗
-      - 馃嚭馃嚫_US_缇庡浗_9
-      - 馃嚚馃嚦_CN_涓�鍥�->馃嚞馃嚙_GB_鑻卞浗
-      - 馃嚭馃嚫_US_缇庡浗_10
-      - 馃嚦馃嚤_NL_鑽峰叞
-      - 馃嚝馃嚪_FR_娉曞浗
-      - 馃嚛馃嚜_DE_寰峰浗_2
-  - name: 馃摬 鐢垫姤淇℃伅
-    type: select
-    proxies:
-      - 馃殌 鑺傜偣閫夋嫨
-      - 馃幆 鍏ㄧ悆鐩磋繛
-      - 馃嚚馃嚦_CN_涓�鍥�->馃嚘馃嚬_AT_濂ュ湴鍒�
-      - 馃嚭馃嚫_US_缇庡浗->馃嚛馃嚜_DE_寰峰浗
-      - 馃嚭馃嚫_US_缇庡浗_1
-      - 馃嚭馃嚫_US_缇庡浗_2
-      - 馃嚭馃嚫_US_缇庡浗_3
-      - 馃嚭馃嚫_US_缇庡浗_4
-      - 馃嚭馃嚫_US_缇庡浗_5
-      - 馃嚭馃嚫_US_缇庡浗_6
-      - 馃嚠馃嚩_IQ_浼婃媺鍏�->馃嚬馃嚪_TR_鍦熻�冲叾
-      - 馃嚠馃嚜_IE_鐖卞皵鍏�
-      - 馃嚭馃嚫_US_缇庡浗_7
-      - 馃嚞馃嚠_GI_鐩村竷缃楅檧_1
-      - 馃嚛馃嚜_DE_寰峰浗_1
-      - 馃嚞馃嚠_GI_鐩村竷缃楅檧_2
-      - 馃嚭馃嚘_UA_涔屽厠鍏�
-      - 馃嚭馃嚫_US_缇庡浗_8
-      - 馃嚢馃嚪_KR_闊╁浗
-      - 馃嚭馃嚫_US_缇庡浗_9
-      - 馃嚚馃嚦_CN_涓�鍥�->馃嚞馃嚙_GB_鑻卞浗
-      - 馃嚭馃嚫_US_缇庡浗_10
-      - 馃嚦馃嚤_NL_鑽峰叞
-      - 馃嚝馃嚪_FR_娉曞浗
-      - 馃嚛馃嚜_DE_寰峰浗_2
-  - name: 鈸傦笍 寰�杞�鏈嶅姟
-    type: select
-    proxies:
-      - 馃幆 鍏ㄧ悆鐩磋繛
-      - 馃殌 鑺傜偣閫夋嫨
-      - 馃嚚馃嚦_CN_涓�鍥�->馃嚘馃嚬_AT_濂ュ湴鍒�
-      - 馃嚭馃嚫_US_缇庡浗->馃嚛馃嚜_DE_寰峰浗
-      - 馃嚭馃嚫_US_缇庡浗_1
-      - 馃嚭馃嚫_US_缇庡浗_2
-      - 馃嚭馃嚫_US_缇庡浗_3
-      - 馃嚭馃嚫_US_缇庡浗_4
-      - 馃嚭馃嚫_US_缇庡浗_5
-      - 馃嚭馃嚫_US_缇庡浗_6
-      - 馃嚠馃嚩_IQ_浼婃媺鍏�->馃嚬馃嚪_TR_鍦熻�冲叾
-      - 馃嚠馃嚜_IE_鐖卞皵鍏�
-      - 馃嚭馃嚫_US_缇庡浗_7
-      - 馃嚞馃嚠_GI_鐩村竷缃楅檧_1
-      - 馃嚛馃嚜_DE_寰峰浗_1
-      - 馃嚞馃嚠_GI_鐩村竷缃楅檧_2
-      - 馃嚭馃嚘_UA_涔屽厠鍏�
-      - 馃嚭馃嚫_US_缇庡浗_8
-      - 馃嚢馃嚪_KR_闊╁浗
-      - 馃嚭馃嚫_US_缇庡浗_9
-      - 馃嚚馃嚦_CN_涓�鍥�->馃嚞馃嚙_GB_鑻卞浗
-      - 馃嚭馃嚫_US_缇庡浗_10
-      - 馃嚦馃嚤_NL_鑽峰叞
-      - 馃嚝馃嚪_FR_娉曞浗
-      - 馃嚛馃嚜_DE_寰峰浗_2
-  - name: 馃崕 鑻规灉鏈嶅姟
-    type: select
-    proxies:
-      - 馃殌 鑺傜偣閫夋嫨
-      - 馃幆 鍏ㄧ悆鐩磋繛
-      - 馃嚚馃嚦_CN_涓�鍥�->馃嚘馃嚬_AT_濂ュ湴鍒�
-      - 馃嚭馃嚫_US_缇庡浗->馃嚛馃嚜_DE_寰峰浗
-      - 馃嚭馃嚫_US_缇庡浗_1
-      - 馃嚭馃嚫_US_缇庡浗_2
-      - 馃嚭馃嚫_US_缇庡浗_3
-      - 馃嚭馃嚫_US_缇庡浗_4
-      - 馃嚭馃嚫_US_缇庡浗_5
-      - 馃嚭馃嚫_US_缇庡浗_6
-      - 馃嚠馃嚩_IQ_浼婃媺鍏�->馃嚬馃嚪_TR_鍦熻�冲叾
-      - 馃嚠馃嚜_IE_鐖卞皵鍏�
-      - 馃嚭馃嚫_US_缇庡浗_7
-      - 馃嚞馃嚠_GI_鐩村竷缃楅檧_1
-      - 馃嚛馃嚜_DE_寰峰浗_1
-      - 馃嚞馃嚠_GI_鐩村竷缃楅檧_2
-      - 馃嚭馃嚘_UA_涔屽厠鍏�
-      - 馃嚭馃嚫_US_缇庡浗_8
-      - 馃嚢馃嚪_KR_闊╁浗
-      - 馃嚭馃嚫_US_缇庡浗_9
-      - 馃嚚馃嚦_CN_涓�鍥�->馃嚞馃嚙_GB_鑻卞浗
-      - 馃嚭馃嚫_US_缇庡浗_10
-      - 馃嚦馃嚤_NL_鑽峰叞
-      - 馃嚝馃嚪_FR_娉曞浗
-      - 馃嚛馃嚜_DE_寰峰浗_2
+      - 馃嚭馃嚫 _US_缇庡浗
+      - 馃嚭馃嚫 _CN_涓�鍥�->馃嚭馃嚫_US_缇庡浗
+      - 馃嚭馃嚫 _US_缇庡浗 2
+      - 馃嚭馃嚫 _US_缇庡浗->馃嚠馃嚪_IR_浼婃湕
+      - 馃嚭馃嚫 _US_缇庡浗 3
+      - 馃嚭馃嚫 _CN_涓�鍥�->馃嚭馃嚫_US_缇庡浗 2
+      - 馃嚞馃嚙 _GB_鑻卞浗
+      - 馃嚭馃嚫 _US_缇庡浗->馃嚠馃嚪_IR_浼婃湕 2
+      - 馃嚭馃嚫 _US_缇庡浗 4
+      - 馃嚚馃嚘 _CA_鍔犳嬁澶�
+      - 馃嚚馃嚘 _CA_鍔犳嬁澶� 2
+      - 馃嚭馃嚫 _US_缇庡浗 5
+      - 馃嚭馃嚫 _US_缇庡浗 6
+      - 馃嚭馃嚫 _US_缇庡浗->馃嚨馃嚦_PN_鐨�鐗瑰嚡鎭�
+      - 馃嚭馃嚫 _US_缇庡浗 7
+      - 馃嚭馃嚫 _US_缇庡浗 8
+      - 馃嚭馃嚫 _US_缇庡浗 9
+      - 馃嚭馃嚫 _CN_涓�鍥�->馃嚭馃嚫_US_缇庡浗 3
+      - 馃嚚馃嚳 _CN_涓�鍥�->馃嚚馃嚳_CZ_鎹峰厠
+      - 馃嚭馃嚘 _CN_涓�鍥�->馃嚭馃嚘_UA_涔屽厠鍏�
+      - 馃嚭馃嚫 _US_缇庡浗 10
+      - 馃嚭馃嚫 _US_缇庡浗 11
+      - 馃嚘馃嚪 _AR_闃挎牴寤�->馃嚦馃嚤_NL_鑽峰叞
+      - 馃嚛馃嚜 _DE_寰峰浗
+      - 馃嚭馃嚫 _US_缇庡浗 12
+      - 馃嚭馃嚫 _US_缇庡浗 13
+      - 馃嚭馃嚫 _US_缇庡浗 14
+      - 馃嚭馃嚫 _US_缇庡浗->馃嚨馃嚦_PN_鐨�鐗瑰嚡鎭� 2
+      - 馃嚘馃嚬 _CN_涓�鍥�->馃嚘馃嚬_AT_濂ュ湴鍒�
+      - 馃嚭馃嚫 _CN_涓�鍥�->馃嚭馃嚫_US_缇庡浗 4
+      - 馃嚭馃嚫 _US_缇庡浗 15
+      - 馃嚞馃嚙 _GB_鑻卞浗 2
+      - 馃嚛馃嚜 _DE_寰峰浗 2
   - name: 馃幆 鍏ㄧ悆鐩磋繛
     type: select
     proxies:
       - DIRECT
       - 馃殌 鑺傜偣閫夋嫨
-      - 鈾伙笍 鑷�鍔ㄩ�夋嫨
   - name: 馃洃 鍏ㄧ悆鎷︽埅
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-  - name: 馃崈 搴旂敤鍑�鍖�
     type: select
     proxies:
       - REJECT
@@ -300,43 +101,47 @@ proxy-groups:
     proxies:
       - 馃殌 鑺傜偣閫夋嫨
       - 馃幆 鍏ㄧ悆鐩磋繛
-      - 鈾伙笍 鑷�鍔ㄩ�夋嫨
-      - 馃嚚馃嚦_CN_涓�鍥�->馃嚘馃嚬_AT_濂ュ湴鍒�
-      - 馃嚭馃嚫_US_缇庡浗->馃嚛馃嚜_DE_寰峰浗
-      - 馃嚭馃嚫_US_缇庡浗_1
-      - 馃嚭馃嚫_US_缇庡浗_2
-      - 馃嚭馃嚫_US_缇庡浗_3
-      - 馃嚭馃嚫_US_缇庡浗_4
-      - 馃嚭馃嚫_US_缇庡浗_5
-      - 馃嚭馃嚫_US_缇庡浗_6
-      - 馃嚠馃嚩_IQ_浼婃媺鍏�->馃嚬馃嚪_TR_鍦熻�冲叾
-      - 馃嚠馃嚜_IE_鐖卞皵鍏�
-      - 馃嚭馃嚫_US_缇庡浗_7
-      - 馃嚞馃嚠_GI_鐩村竷缃楅檧_1
-      - 馃嚛馃嚜_DE_寰峰浗_1
-      - 馃嚞馃嚠_GI_鐩村竷缃楅檧_2
-      - 馃嚭馃嚘_UA_涔屽厠鍏�
-      - 馃嚭馃嚫_US_缇庡浗_8
-      - 馃嚢馃嚪_KR_闊╁浗
-      - 馃嚭馃嚫_US_缇庡浗_9
-      - 馃嚚馃嚦_CN_涓�鍥�->馃嚞馃嚙_GB_鑻卞浗
-      - 馃嚭馃嚫_US_缇庡浗_10
-      - 馃嚦馃嚤_NL_鑽峰叞
-      - 馃嚝馃嚪_FR_娉曞浗
-      - 馃嚛馃嚜_DE_寰峰浗_2
-
+      - 馃嚭馃嚫 _US_缇庡浗
+      - 馃嚭馃嚫 _CN_涓�鍥�->馃嚭馃嚫_US_缇庡浗
+      - 馃嚭馃嚫 _US_缇庡浗 2
+      - 馃嚭馃嚫 _US_缇庡浗->馃嚠馃嚪_IR_浼婃湕
+      - 馃嚭馃嚫 _US_缇庡浗 3
+      - 馃嚭馃嚫 _CN_涓�鍥�->馃嚭馃嚫_US_缇庡浗 2
+      - 馃嚞馃嚙 _GB_鑻卞浗
+      - 馃嚭馃嚫 _US_缇庡浗->馃嚠馃嚪_IR_浼婃湕 2
+      - 馃嚭馃嚫 _US_缇庡浗 4
+      - 馃嚚馃嚘 _CA_鍔犳嬁澶�
+      - 馃嚚馃嚘 _CA_鍔犳嬁澶� 2
+      - 馃嚭馃嚫 _US_缇庡浗 5
+      - 馃嚭馃嚫 _US_缇庡浗 6
+      - 馃嚭馃嚫 _US_缇庡浗->馃嚨馃嚦_PN_鐨�鐗瑰嚡鎭�
+      - 馃嚭馃嚫 _US_缇庡浗 7
+      - 馃嚭馃嚫 _US_缇庡浗 8
+      - 馃嚭馃嚫 _US_缇庡浗 9
+      - 馃嚭馃嚫 _CN_涓�鍥�->馃嚭馃嚫_US_缇庡浗 3
+      - 馃嚚馃嚳 _CN_涓�鍥�->馃嚚馃嚳_CZ_鎹峰厠
+      - 馃嚭馃嚘 _CN_涓�鍥�->馃嚭馃嚘_UA_涔屽厠鍏�
+      - 馃嚭馃嚫 _US_缇庡浗 10
+      - 馃嚭馃嚫 _US_缇庡浗 11
+      - 馃嚘馃嚪 _AR_闃挎牴寤�->馃嚦馃嚤_NL_鑽峰叞
+      - 馃嚛馃嚜 _DE_寰峰浗
+      - 馃嚭馃嚫 _US_缇庡浗 12
+      - 馃嚭馃嚫 _US_缇庡浗 13
+      - 馃嚭馃嚫 _US_缇庡浗 14
+      - 馃嚭馃嚫 _US_缇庡浗->馃嚨馃嚦_PN_鐨�鐗瑰嚡鎭� 2
+      - 馃嚘馃嚬 _CN_涓�鍥�->馃嚘馃嚬_AT_濂ュ湴鍒�
+      - 馃嚭馃嚫 _CN_涓�鍥�->馃嚭馃嚫_US_缇庡浗 4
+      - 馃嚭馃嚫 _US_缇庡浗 15
+      - 馃嚞馃嚙 _GB_鑻卞浗 2
+      - 馃嚛馃嚜 _DE_寰峰浗 2
 rules:
-# 鏈�鍦�/灞�鍩熺綉鍦板潃
-# 鍙傝�冿細https://en.wikipedia.org/wiki/Reserved_IP_addresses
-# ACL4SSR鏍囧織 濡傛病鏈夛紝浠ｈ〃涓嶆槸鐢ˋCL4SSR瑙勫垯
-# 鏈�鍦�/灞�鍩熺綉鍦板潃
-# Router managed 璺�鐢卞櫒绠＄悊鍩熷悕
   - DOMAIN-SUFFIX,acl4.ssr,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,ip6-localhost,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,ip6-loopback,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,lan,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,local,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,localhost,馃幆 鍏ㄧ悆鐩磋繛
+  - IP-CIDR,0.0.0.0/8,馃幆 鍏ㄧ悆鐩磋繛,no-resolve
   - IP-CIDR,10.0.0.0/8,馃幆 鍏ㄧ悆鐩磋繛,no-resolve
   - IP-CIDR,100.64.0.0/10,馃幆 鍏ㄧ悆鐩磋繛,no-resolve
   - IP-CIDR,127.0.0.0/8,馃幆 鍏ㄧ悆鐩磋繛,no-resolve
@@ -351,6 +156,7 @@ rules:
   - DOMAIN,instant.arubanetworks.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN,setmeup.arubanetworks.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN,router.asus.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,www.asusrouter.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,hiwifi.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,leike.cc,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,miwifi.com,馃幆 鍏ㄧ悆鐩磋繛
@@ -363,23 +169,34 @@ rules:
   - DOMAIN-SUFFIX,tendawifi.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,zte.home,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,tplogin.cn,馃幆 鍏ㄧ悆鐩磋繛
-# 鏈�纰庣墖鍙�鍖呭惈甯歌�佸箍鍛婂叧閿�瀛椼�佸箍鍛婅仈鐩熴�傛棤鍓�浣滅敤锛屾斁蹇冧娇鐢�
-# 骞垮憡鍏抽敭璇�
-# 骞垮憡鑱旂洘-鍥藉唴****************
-# 骞垮憡鑱旂洘-鍥藉��****************
-# 鍨冨溇绔欑偣****************
-# 杩愯惀鍟嗗箍鍛�****************
+  - DOMAIN-SUFFIX,wifi.cmcc,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,ol.epicgames.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,dizhensubao.getui.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,dl.google.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,googletraveladservices.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,tracking-protection.cdn.mozilla.net,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,origin-a.akamaihd.net,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,fairplay.l.qq.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,livew.l.qq.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,vd.l.qq.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,errlog.umeng.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,msg.umeng.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,msg.umengcloud.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,tracking.miui.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,app.adjust.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,bdtj.tagtic.cn,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,rewards.hypixel.net,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,koodomobile.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,koodomobile.ca,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-KEYWORD,admarvel,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,admaster,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,adsage,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,adsensor,馃洃 鍏ㄧ悆鎷︽埅
-  - DOMAIN-KEYWORD,adservice,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,adsmogo,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,adsrvmedia,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,adsserving,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,adsystem,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,adwords,馃洃 鍏ㄧ悆鎷︽埅
-  - DOMAIN-KEYWORD,analysis,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,applovin,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,appsflyer,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,domob,馃洃 鍏ㄧ悆鎷︽埅
@@ -393,7 +210,6 @@ rules:
   - DOMAIN-KEYWORD,pingfore,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,socdm,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,supersonicads,馃洃 鍏ㄧ悆鎷︽埅
-  - DOMAIN-KEYWORD,usage,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,wlmonitor,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-KEYWORD,zjtoolbar,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-SUFFIX,09mk.cn,馃洃 鍏ㄧ悆鎷︽埅
@@ -790,6 +606,7 @@ rules:
   - DOMAIN-SUFFIX,zhjfad.com,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-SUFFIX,zqzxz.com,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-SUFFIX,zzsx8.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wwads.cn,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-SUFFIX,acuityplatform.com,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-SUFFIX,ad-stir.com,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-SUFFIX,ad-survey.com,馃洃 鍏ㄧ悆鎷︽埅
@@ -963,1094 +780,1029 @@ rules:
   - DOMAIN-SUFFIX,go.10086.cn,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-SUFFIX,hivedata.cc,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-SUFFIX,navi.gd.chinamobile.com,馃洃 鍏ㄧ悆鎷︽埅
-# 鍖呭惈甯哥敤搴旂敤鐨勫悇绉嶅幓骞垮憡瑙勫垯銆�
-# 鍙�鑳芥湁杞诲井鍓�浣滅敤锛屽彲鏀惧績浣跨敤銆傦紙濡傛灉缃戠珯鍔熻兘鍜屽箍鍛婂啿绐侊紝浼氬垹鎺夊幓骞垮憡瑙勫垯锛�
-# 163
-# 17173
-# 178
-# 2345
-# 360
-# 58
-# Alibaba
-# Adobe
-# Apple
-# AutoHome
-# Baidu
-# Book-app 璧风偣 鎺岄槄 涔︽棗 瀹滄悳
-# ByteDance 澶存潯鎶栭煶
-# Dangdang
-# Duomi
-# Facebook
-# Fang
-# Google
-# JD
-# Kugou
-# Kuwo
-# Meizu flyme 榄呮棌
-# Meitu
-# Miui 灏忕背
-# Moji
-# Qingting.fm
-# QQ
-# RenRen
-# Sina
-# Sougou
-# Teleplus
-# Twitter
-# UC ali
-# Weifeng
-# WPS Office
-# Wi-Fi key
-# Ximalaya 鍠滈┈鎷夐泤
-# Xunlei 杩呴浄app&鐪嬬湅
-# Yahoo
-# Zhihu
-# Ads in Video apps 涓嬮潰閮芥槸 ********************
-# 6闂存埧
-# Baofeng 鏆撮�庡奖闊�
-# Douyu
-# Fenghuang 鍑ゅ嚢TV
-# Funshion 椋庤��
-# iqiyi PPS 鐖卞�囪壓
-# Ku6 閰�6
-# LeTV 涔愯��
-# MGTV 鑺掓灉TV
-# Sohu 鎼滅嫄
-# PPTV銆丳PLive
-# QQ Live
-# Youku & Tudou
-# Youtube
-# Others ads in Video apps
-# Ads in Video apps end 涓婇潰閮芥槸 ********************
-# 甯哥敤缃戠珯骞垮憡
-  - DOMAIN-SUFFIX,a.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adgeo.corp.163.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,analytics.126.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bobo.corp.163.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,c.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,clkservice.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,conv.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dsp-impr2.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dsp.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,fa.corp.163.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,g.corp.163.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,g1.corp.163.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gb.corp.163.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gorgon.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,haitaoad.nosdn.127.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,iadmatvideo.nosdn.127.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,img1.126.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,img2.126.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ir.mail.126.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ir.mail.yeah.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mimg.126.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,nc004x.corp.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,nc045x.corp.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,nex.corp.163.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,oimagea2.ydstatic.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pagechoice.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,prom.gome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,qchannel0d.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,qt002x.corp.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rlogs.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,static.flv.uuzuonline.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tb060x.corp.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tb104x.corp.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,union.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wanproxy.127.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ydpushserver.youdao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cvda.17173.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,imgapp.yeyou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,log1.17173.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,s.17173cdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ue.yeyoucdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,vda.17173.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,analytics.wanmei.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gg.stargame.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dl.2345.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,download.2345.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,houtai.2345.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,jifen.2345.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,jifendownload.2345.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,minipage.2345.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wan.2345.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,zhushou.2345.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,3600.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gamebox.360.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,jiagu.360.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,kuaikan.netmon.360safe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,leak.360.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,lianmeng.360.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pub.se.360.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,s.so.360.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,shouji.360.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,soft.data.weather.360.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stat.360safe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stat.m.360.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,update.360safe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wan.360.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,58.xgo.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,brandshow.58.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,imp.xgo.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,jing.58.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stat.xgo.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,track.58.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tracklog.58.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,acjs.aliyun.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adash-c.m.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adash-c.ut.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adashx4yt.m.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adashxgc.ut.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,afp.alicdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ai.m.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,alipaylog.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,atanx.alicdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,atanx2.alicdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,fav.simba.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,g.click.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,g.tbcdn.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gma.alicdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gtmsdd.alicdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hydra.alibaba.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,m.simba.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pindao.huoban.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,re.m.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,redirect.simba.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rj.m.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sdkinit.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,show.re.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,simaba.m.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,simaba.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,srd.simba.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,strip.taobaocdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tns.simba.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tyh.taobao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,userimg.qunar.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,yiliao.hupan.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,3dns-2.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,3dns-3.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,activate-sea.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,activate-sjc0.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,activate.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adobe-dns-2.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adobe-dns-3.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adobe-dns.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ereg.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,geo2.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hl2rcv.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hlrcv.stage.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,lm.licenses.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,lmlicenses.wip4.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,na1r.services.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,na2m-pr.licenses.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,practivate.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wip3.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wwis-dubc1-vip60.adobe.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adserver.unityads.unity3d.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,33.autohome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adproxy.autohome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,al.autohome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,alert.autohome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,applogapi.autohome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,c.autohome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cmx.autohome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dspmnt.autohome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pcd.autohome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,push.app.autohome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pvx.autohome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rd.autohome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rdx.autohome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stats.autohome.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,a.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,a.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.duapps.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.player.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adm.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adm.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adscdn.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adscdn.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adx.xiaodutv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ae.bdstatic.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,afd.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,afd.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,als.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,als.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,anquan.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,anquan.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,antivirus.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,api.mobula.sdk.duapps.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,appc.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,appc.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,as.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,as.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,baichuan.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,baidu9635.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,baidustatic.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,baidutv.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,baikebcs.bdimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,banlv.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bar.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bdplus.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,btlaunch.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,c.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,c.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cb.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cb.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cbjs.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cbjs.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cbjslog.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cbjslog.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cjhq.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cjhq.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cleaner.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,click.bes.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,click.hm.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,click.qianqian.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cm.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cpro.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cpro.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cpro.baidustatic.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cpro.tieba.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cpro.zhidao.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cpro2.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cpro2.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cpu-admin.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,crs.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,crs.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,datax.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dl-vip.bav.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dl-vip.pcfaster.baidu.co.th,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dl.client.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dl.ops.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dl1sw.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dl2.bav.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dlsw.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dlsw.br.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,download.bav.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,download.sd.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,drmcmm.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,drmcmm.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dup.baidustatic.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dxp.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dzl.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,e.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,e.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,eclick.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,eclick.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ecma.bdimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ecmb.bdimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ecmc.bdimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,eiv.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,eiv.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,em.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ers.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,f10.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,fc-.cdn.bcebos.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,fc-feed.cdn.bcebos.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,fclick.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,fexclick.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,g.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gimg.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,guanjia.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hc.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hc.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hm.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hm.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hmma.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hmma.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hpd.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hpd.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,idm-su.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,iebar.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ikcode.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,imageplus.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,imageplus.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,img.taotaosou.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,img01.taotaosou.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,itsdata.map.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,j.br.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,kstj.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,log.music.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,log.nuomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,m1.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ma.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ma.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mg09.zhaopin.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mipcache.bdstatic.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mobads-logs.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mobads-logs.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mobads.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mobads.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mpro.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mtj.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mtj.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,neirong.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,nsclick.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,nsclick.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,nsclickvideo.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,openrcv.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pc.videoclick.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pos.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pups.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pups.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pups.bdimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,push.music.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,push.zhanzhang.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,qchannel0d.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,qianclick.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,release.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,res.limei.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,res.mi.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rigel.baidustatic.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,river.zhidao.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rj.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rj.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rp.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rp.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rplog.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,s.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sclick.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sestat.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,shadu.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,share.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sobar.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sobartop.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,spcode.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,spcode.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stat.v.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,su.bdimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,su.bdstatic.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tk.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tk.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tkweb.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tob-cms.bj.bcebos.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,toolbar.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tracker.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tuijian.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tuisong.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tuisong.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ubmcmm.baidustatic.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ucstat.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ucstat.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ulic.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ulog.imap.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,union.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,union.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,unionimage.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,utility.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,utility.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,utk.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,utk.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,videopush.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,videopush.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,vv84.bj.bcebos.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,w.gdown.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,w.x.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wangmeng.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wangmeng.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,weishi.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wenku-cms.bj.bcebos.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wisepush.video.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wm.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wm.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,znsv.baidu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,znsv.baidu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,zz.bdstatic.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,zzy1.quyaoya.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.zhangyue.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adm.ps.easou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,aishowbger.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,api.itaoxiaoshuo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,assets.ps.easou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bbcoe.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cj.qidian.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dkeyn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,drdwy.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,e.aa985.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,e.v02u9.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,e701.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ehxyz.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ethod.gzgmjcx.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,focuscat.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,game.qidian.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hdswgc.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,jyd.fjzdmy.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,m.ourlj.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,m.txtxr.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,m.vsxet.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,miam4.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,o.if.qidian.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,p.vq6nsu.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,picture.duokan.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,push.zhangyue.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pyerc.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,s1.cmfu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sc.shayugg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sdk.cferw.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sezvc.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sys.zhangyue.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tjlog.ps.easou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tongji.qidian.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ut2.shuqistat.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,xgcsr.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,xjq.jxmqkj.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,xpe.cxaerp.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,xtzxmy.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,xyrkl.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,zhuanfakong.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.toutiao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dsp.toutiao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ic.snssdk.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,log.snssdk.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,nativeapp.toutiao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pangolin.snssdk.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,partner.toutiao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pglstatp-toutiao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sm.toutiao.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,a.dangdang.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,click.dangdang.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,schprompt.dangdang.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,t.dangdang.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.duomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,boxshows.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,staticxx.facebook.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,click1n.soufun.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,clickm.fang.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,clickn.fang.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,countpvn.light.fang.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,countubn.light.soufun.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mshow.fang.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tongji.home.soufun.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,admob.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads.gmodules.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads.google.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adservice.google.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,afd.l.google.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,badad.googleplex.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,csi.gstatic.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,doubleclick.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,doubleclick.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,google-analytics.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,googleadservices.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,googleadsserving.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,googlecommerce.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,googlesyndication.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mobileads.google.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pagead-tpc.l.google.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pagead.google.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pagead.l.google.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,service.urchin.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads.union.jd.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,c-nfa.jd.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cps.360buy.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,img-x.jd.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,jrclick.jd.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,jzt.jd.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,policy.jd.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stat.m.jd.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads.service.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adsfile.bssdlbig.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,d.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,downmobile.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gad.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,game.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gamebox.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gcapi.sy.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gg.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,install.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,install2.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,kgmobilestat.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,kuaikaiapp.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,log.stat.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,log.web.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,minidcsc.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mo.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mobilelog.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,msg.mobile.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mvads.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,p.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,push.mobile.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rtmonitor.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sdn.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tj.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,update.mobile.kugou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,apk.shouji.koowo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,deliver.kuwo.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,g.koowo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,g.kuwo.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,kwmsg.kuwo.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,log.kuwo.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mobilead.kuwo.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,msclick2.kuwo.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,msphoneclick.kuwo.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,updatepage.kuwo.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wa.kuwo.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,webstat.kuwo.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,aider-res.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,api-flow.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,api-game.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,api-push.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,aries.mzres.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bro.flyme.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cal.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ebook.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ebook.res.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,game-res.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,game.res.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,infocenter.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,openapi-news.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,push.res.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,reader.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,reader.res.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,t-e.flyme.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,t-flow.flyme.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tongji-res1.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tongji.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,umid.orion.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,upush.res.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,uxip.meizu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,a.koudai.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adui.tg.meitu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,corp.meitu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dc.meitustat.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gg.meitu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mdc.meitustat.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,meitubeauty.meitudata.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,message.meitu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rabbit.meitustat.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rabbit.tg.meitu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tuiguang.meitu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,xiuxiu.android.dl.meitu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,xiuxiu.mobile.meitudata.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,a.market.xiaomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.xiaomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad1.xiaomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adv.sec.intl.miui.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adv.sec.miui.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bss.pandora.xiaomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,d.g.mi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,data.mistat.xiaomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,de.pandora.xiaomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dvb.pandora.xiaomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,jellyfish.pandora.xiaomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,migc.g.mi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,migcreport.g.mi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,notice.game.xiaomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ppurifier.game.xiaomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,r.browser.miui.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,security.browser.miui.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,shenghuo.xiaomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stat.pandora.xiaomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,union.mi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wtradv.market.xiaomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,xmpush.xiaomi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.api.moji.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,app.moji001.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cdn.moji002.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cdn2.moji002.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,fds.api.moji.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,log.moji.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stat.moji.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ugc.moji001.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.qingting.fm,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,admgr.qingting.fm,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dload.qd.qingting.fm,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,logger.qingting.fm,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,s.qd.qingting.fm,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,s.qd.qingtingfm.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-KEYWORD,omgmtaw,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN,adsmind.apdcdn.tc.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN,adsmind.gdtimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN,adsmind.tc.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN,pgdt.gtimg.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN,pgdt.gtimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN,pgdt.ugdtimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN,splashqqlive.gtimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN,wa.gtimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN,wxsnsdy.wxs.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN,wxsnsdythumb.wxs.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,act.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.qun.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adsfile.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bugly.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,buluo.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,e.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gdt.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,l.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,monitor.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pingma.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pingtcss.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,report.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tajs.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tcss.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,uu.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ebp.renren.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,jebe.renren.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,jebe.xnimg.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.sina.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adbox.sina.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,add.sina.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adimg.mobile.sina.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adm.sina.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,alitui.weibo.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,biz.weibo.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cre.dp.sina.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dcads.sina.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dd.sina.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dmp.sina.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,game.weibo.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gw5.push.mcp.weibo.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,leju.sina.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,log.mix.sina.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mobileads.dx.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,newspush.sinajs.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pay.mobile.sina.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sax.mobile.sina.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sax.sina.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,saxd.sina.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sdkapp.mobile.sina.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sdkapp.uve.weibo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sdkclick.mobile.sina.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,slog.sina.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,trends.mobile.sina.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tui.weibo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,u1.img.mobile.sina.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wax.weibo.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wbapp.mobile.sina.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wbapp.uve.weibo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wbclick.mobile.sina.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wbpctips.mobile.sina.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,zymo.mps.weibo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,123.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,123.sogoucdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adsence.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,amfi.gou.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,brand.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cpc.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,epro.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,fair.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,files2.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,galaxy.sogoucdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,golden1.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,goto.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,inte.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,iwan.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,lu.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,lu.sogoucdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pb.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pd.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pv.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,theta.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wan.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wangmeng.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,applovin.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,guangzhuiyuan.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads-twitter.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads.twitter.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,analytics.twitter.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,p.twitter.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,scribe.twitter.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,syndication-o.twitter.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,syndication.twitter.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tellapart.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,urls.api.twitter.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adslot.uc.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,api.mp.uc.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,applog.uc.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,client.video.ucweb.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cms.ucweb.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dispatcher.upmc.uc.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,huichuan.sm.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,log.cs.pp.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,m.uczzd.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,patriot.cs.pp.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,puds.ucweb.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,server.m.pp.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,track.uc.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,u.uc123.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,u.ucfly.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,uc.ucweb.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ucsec.ucweb.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ucsec1.ucweb.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,aoodoo.feng.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,fengbuy.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,push.feng.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,we.tm,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,yes1.feng.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.docer.wps.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adm.zookingsoft.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bannera.kingsoft-office-service.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bole.shangshufang.ksosoft.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,counter.kingsoft.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,docerad.wps.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gou.wps.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hoplink.ksosoft.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ic.ksosoft.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,img.gou.wpscdn.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,info.wps.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ios-informationplatform.wps.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,minfo.wps.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mo.res.wpscdn.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,news.docer.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,notify.wps.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pc.uf.ksosoft.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pcfg.wps.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pixiu.shangshufang.ksosoft.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,push.wps.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rating6.kingsoft-office-service.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,up.wps.kingsoft.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wpsweb-dc.wps.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,c.51y5.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cdsget.51y5.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,news-imgpb.51y5.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wifiapidd.51y5.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wkanc.51y5.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adse.ximalaya.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,linkeye.ximalaya.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,location.ximalaya.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,xdcs-collector.ximalaya.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,biz5.kankan.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,float.kankan.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hub5btmain.sandai.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hub5emu.sandai.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,logic.cpm.cm.kankan.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,upgrade.xl9.xunlei.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.wretch.cc,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adserver.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adss.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,analytics.query.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,analytics.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ane.yahoo.co.jp,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ard.yahoo.co.jp,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,beap-bc.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,clicks.beap.bc.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,comet.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,doubleplay-conf-yql.media.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,flurry.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gemini.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,geo.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,js-apac-ss.ysm.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,locdrop.query.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,onepush.query.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,p3p.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,partnerads.ysm.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ws.progrss.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,yads.yahoo.co.jp,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ybp.yahoo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,zhihu-web-analytics.zhihu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,shrek.6.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,simba.6.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,union.6.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,logger.baofeng.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,xs.houyi.baofeng.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dotcounter.douyutv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,api.newad.ifeng.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,exp.3g.ifeng.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,game.ifeng.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,iis3g.deliver.ifeng.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mfp.deliver.ifeng.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stadig.ifeng.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adm.funshion.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,jobsfe.funshion.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,po.funshion.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pub.funshion.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pv.funshion.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stat.funshion.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.m.iqiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,afp.iqiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,c.uaa.iqiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cloudpush.iqiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cm.passport.iqiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cupid.iqiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,emoticon.sns.iqiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gamecenter.iqiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ifacelog.iqiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mbdlog.iqiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,meta.video.qiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,msg.71.am,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,msg1.video.qiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,msg2.video.qiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,paopao.iqiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,paopaod.qiyipic.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,policy.video.iqiyi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,yuedu.iqiyi.com,馃崈 搴旂敤鍑�鍖�
-  - IP-CIDR,101.227.200.0/24,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,101.227.200.11/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,101.227.200.28/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,101.227.97.240/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,124.192.153.42/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - DOMAIN-SUFFIX,gug.ku6cdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pq.stat.ku6.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,st.vq.ku6.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,static.ku6.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,1.letvlive.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,2.letvlive.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ark.letv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dc.letv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,fz.letv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,g3.letv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,game.letvstore.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,i0.letvimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,i3.letvimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,minisite.letv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,n.mark.letv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pro.hoye.letv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pro.letv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stat.letv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,static.app.m.letv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,click.hunantv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,da.hunantv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,da.mgtv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,log.hunantv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,log.v2.hunantv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,p2.hunantv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,res.hunantv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,888.tv.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adnet.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,aty.hd.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,aty.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bd.hd.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,click.hd.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,click2.hd.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ctr.hd.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,epro.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,epro.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,go.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,golden1.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,golden1.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hui.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,inte.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,inte.sogoucdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,inte.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,lm.tv.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,lu.sogoucdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pb.hd.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,push.tv.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pv.hd.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pv.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pv.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,theta.sogoucdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,um.hd.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,uranus.sogou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,uranus.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wan.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wl.hd.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,yule.sohu.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,afp.pplive.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,app.aplus.pptv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,as.aplus.pptv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,asimgs.pplive.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,de.as.pptv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,jp.as.pptv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pp2.pptv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stat.pptv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,btrace.video.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,c.l.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dp3.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,livep.l.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,lives.l.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,livew.l.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mcgi.v.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mdevstat.qqlive.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,omgmta1.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,p.l.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,rcgi.video.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,t.l.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,u.l.qq.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,a-dxk.play.api.3g.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,actives.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.api.3g.tudou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.api.3g.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.api.mobile.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.mobile.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adcontrol.tudou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adplay.tudou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,b.smartvideo.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,c.yes.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dev-push.m.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dl.g.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dmapp.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,e.stat.ykimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gamex.mobile.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,goods.tudou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hudong.pl.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hz.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,iwstat.tudou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,iyes.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,l.ykimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,l.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,lstat.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,lvip.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mobilemsg.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,msg.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,myes.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,nstat.tudou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,p-log.ykimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,p.l.ykimg.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,p.l.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,passport-log.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,push.m.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,r.l.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,s.p.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sdk.m.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stat.tudou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stat.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stats.tudou.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,store.tv.api.3g.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,store.xl.api.3g.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tdrec.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,test.ott.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,v.l.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,val.api.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,wan.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ykatr.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ykrec.youku.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ykrectab.youku.com,馃崈 搴旂敤鍑�鍖�
-  - IP-CIDR,117.177.248.17/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,117.177.248.41/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,223.87.176.139/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,223.87.176.176/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,223.87.177.180/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,223.87.177.182/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,223.87.177.184/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,223.87.177.43/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,223.87.177.47/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,223.87.177.80/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,223.87.182.101/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,223.87.182.102/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,223.87.182.11/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - IP-CIDR,223.87.182.52/32,馃崈 搴旂敤鍑�鍖�,no-resolve
-  - DOMAIN-SUFFIX,azabu-u.ac.jp,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,couchcoaster.jp,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,delivery.dmkt-sp.jp,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ehg-youtube.hitbox.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,nichibenren.or.jp,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,nicorette.co.kr,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ssl-youtube.2cnt.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,youtube.112.2o7.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,youtube.2cnt.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,acsystem.wasu.tv,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads.cdn.tvb.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads.wasu.tv,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,afp.wasu.tv,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,c.algovid.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gg.jtertp.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,gridsum-vd.cntv.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,kwflvcdn.000dn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,logstat.t.sfht.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,match.rtbidder.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,n-st.vip.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pop.uusee.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,static.duoshuo.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,t.cr-nielsen.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,terren.cntv.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,1.win7china.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,168.it168.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,2.win7china.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,801.tianya.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,801.tianyaui.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,803.tianya.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,803.tianyaui.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,806.tianya.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,806.tianyaui.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,808.tianya.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,808.tianyaui.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,92x.tumblr.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,a1.itc.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad-channel.wikawika.xyz,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad-display.wikawika.xyz,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.12306.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.3.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.95306.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.caiyunapp.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.cctv.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.cmvideo.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.csdn.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.ganji.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.house365.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.thepaper.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ad.unimhk.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adadmin.house365.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adhome.1fangchan.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adm.10jqka.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads.csdn.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads.feedly.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads.genieessp.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads.house365.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ads.linkedin.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adshownew.it168.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,adv.ccb.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,advert.api.thejoyrun.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,analytics.ganji.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,api-deal.kechenggezi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,api-z.weidian.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,app-monitor.ele.me,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bat.bing.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bd1.52che.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bd2.52che.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bdj.tianya.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,bdj.tianyaui.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,beacon.tingyun.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,cdn.jiuzhilan.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,click.cheshi-img.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,click.cheshi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,click.ganji.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,click.tianya.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,click.tianyaui.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,client-api.ele.me,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,collector.githubapp.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,counter.csdn.net,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,d0.xcar.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,de.soquair.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dol.tianya.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dol.tianyaui.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,dw.xcar.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,e.nexac.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,eq.10jqka.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,exp.17wo.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,game.51yund.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ganjituiguang.ganji.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,grand.ele.me,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,hosting.miarroba.info,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,iadsdk.apple.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,image.gentags.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,its-dori.tumblr.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,log.outbrain.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,m.12306media.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,media.cheshi-img.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,media.cheshi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mobile-pubt.ele.me,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,mobileads.msn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,n.cosbot.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,newton-api.ele.me,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ozone.10jqka.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pdl.gionee.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pica-juicy.picacomic.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pixel.wp.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pub.mop.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,push.wandoujia.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pv.cheshi-img.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pv.cheshi.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,pv.xcar.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,qdp.qidian.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,res.gwifi.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,ssp.kssws.ks-cdn.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,sta.ganji.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stat.10jqka.com.cn,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stat.it168.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stats.chinaz.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,stats.developingperspective.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,track.hujiang.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tracker.yhd.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,tralog.ganji.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,up.qingdaonews.com,馃崈 搴旂敤鍑�鍖�
-  - DOMAIN-SUFFIX,vaserviece.10jqka.com.cn,馃崈 搴旂敤鍑�鍖�
-# Google China
-#DOMAIN-SUFFIX,translate.googleapis.com
+  - DOMAIN-SUFFIX,a.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adgeo.corp.163.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,analytics.126.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bobo.corp.163.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,c.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,clkservice.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,conv.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dsp-impr2.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dsp.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,fa.corp.163.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,g.corp.163.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,g1.corp.163.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gb.corp.163.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gorgon.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,haitaoad.nosdn.127.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,iadmatvideo.nosdn.127.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,img1.126.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,img2.126.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ir.mail.126.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ir.mail.yeah.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mimg.126.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,nc004x.corp.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,nc045x.corp.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,nex.corp.163.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,oimagea2.ydstatic.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pagechoice.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,prom.gome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,qchannel0d.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,qt002x.corp.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rlogs.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,static.flv.uuzuonline.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tb060x.corp.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tb104x.corp.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,union.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wanproxy.127.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ydpushserver.youdao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cvda.17173.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,imgapp.yeyou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,log1.17173.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,s.17173cdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ue.yeyoucdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,vda.17173.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,analytics.wanmei.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gg.stargame.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dl.2345.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,download.2345.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,houtai.2345.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,jifen.2345.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,jifendownload.2345.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,minipage.2345.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wan.2345.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,zhushou.2345.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,3600.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gamebox.360.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,jiagu.360.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,kuaikan.netmon.360safe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,leak.360.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,lianmeng.360.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pub.se.360.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,s.so.360.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,shouji.360.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,soft.data.weather.360.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stat.360safe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stat.m.360.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,update.360safe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wan.360.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,58.xgo.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,brandshow.58.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,imp.xgo.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,jing.58.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stat.xgo.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,track.58.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tracklog.58.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,acjs.aliyun.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adash-c.m.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adash-c.ut.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adashx4yt.m.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adashxgc.ut.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,afp.alicdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ai.m.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,alipaylog.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,atanx.alicdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,atanx2.alicdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,fav.simba.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,g.click.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,g.tbcdn.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gma.alicdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gtmsdd.alicdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hydra.alibaba.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,m.simba.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pindao.huoban.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,re.m.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,redirect.simba.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rj.m.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sdkinit.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,show.re.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,simaba.m.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,simaba.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,srd.simba.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,strip.taobaocdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tns.simba.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tyh.taobao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,userimg.qunar.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,yiliao.hupan.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,3dns-2.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,3dns-3.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,activate-sea.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,activate-sjc0.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,activate.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adobe-dns-2.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adobe-dns-3.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adobe-dns.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ereg.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,geo2.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hl2rcv.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hlrcv.stage.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,lm.licenses.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,lmlicenses.wip4.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,na1r.services.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,na2m-pr.licenses.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,practivate.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wip3.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wwis-dubc1-vip60.adobe.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adserver.unityads.unity3d.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,33.autohome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adproxy.autohome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,al.autohome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,alert.autohome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,applogapi.autohome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,c.autohome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cmx.autohome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dspmnt.autohome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pcd.autohome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,push.app.autohome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pvx.autohome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rd.autohome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rdx.autohome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stats.autohome.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,a.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,a.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.duapps.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.player.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adm.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adm.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adscdn.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adscdn.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adx.xiaodutv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ae.bdstatic.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,afd.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,afd.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,als.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,als.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,anquan.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,anquan.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,antivirus.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,api.mobula.sdk.duapps.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,appc.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,appc.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,as.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,as.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,baichuan.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,baidu9635.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,baidustatic.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,baidutv.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,banlv.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bar.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bdplus.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,btlaunch.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,c.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,c.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cb.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cb.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cbjs.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cbjs.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cbjslog.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cbjslog.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cjhq.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cjhq.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cleaner.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,click.bes.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,click.hm.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,click.qianqian.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cm.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cpro.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cpro.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cpro.baidustatic.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cpro.tieba.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cpro.zhidao.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cpro2.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cpro2.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cpu-admin.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,crs.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,crs.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,datax.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dl-vip.bav.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dl-vip.pcfaster.baidu.co.th,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dl.client.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dl.ops.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dl1sw.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dl2.bav.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dlsw.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dlsw.br.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,download.bav.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,download.sd.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,drmcmm.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,drmcmm.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dup.baidustatic.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dxp.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dzl.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,e.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,e.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,eclick.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,eclick.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ecma.bdimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ecmb.bdimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ecmc.bdimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,eiv.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,eiv.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,em.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ers.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,f10.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,fc-.cdn.bcebos.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,fc-feed.cdn.bcebos.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,fclick.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,fexclick.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,g.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gimg.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,guanjia.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hc.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hc.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hm.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hm.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hmma.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hmma.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hpd.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hpd.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,idm-su.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,iebar.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ikcode.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,imageplus.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,imageplus.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,img.taotaosou.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,img01.taotaosou.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,itsdata.map.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,j.br.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,kstj.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,log.music.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,log.nuomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,m1.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ma.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ma.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mg09.zhaopin.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mipcache.bdstatic.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mobads-logs.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mobads-logs.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mobads.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mobads.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mpro.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mtj.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mtj.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,neirong.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,nsclick.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,nsclick.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,nsclickvideo.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,openrcv.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pc.videoclick.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pos.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pups.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pups.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pups.bdimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,push.music.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,push.zhanzhang.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,qchannel0d.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,qianclick.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,release.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,res.limei.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,res.mi.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rigel.baidustatic.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,river.zhidao.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rj.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rj.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rp.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rp.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rplog.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,s.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sclick.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sestat.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,shadu.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,share.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sobar.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sobartop.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,spcode.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,spcode.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stat.v.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,su.bdimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,su.bdstatic.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tk.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tk.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tkweb.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tob-cms.bj.bcebos.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,toolbar.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tracker.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tuijian.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tuisong.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tuisong.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ubmcmm.baidustatic.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ucstat.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ucstat.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ulic.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ulog.imap.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,union.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,union.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,unionimage.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,utility.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,utility.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,utk.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,utk.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,videopush.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,videopush.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,vv84.bj.bcebos.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,w.gdown.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,w.x.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wangmeng.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wangmeng.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,weishi.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wenku-cms.bj.bcebos.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wisepush.video.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wm.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wm.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,znsv.baidu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,znsv.baidu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,zz.bdstatic.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,zzy1.quyaoya.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.zhangyue.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adm.ps.easou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,aishowbger.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,api.itaoxiaoshuo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,assets.ps.easou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bbcoe.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cj.qidian.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dkeyn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,drdwy.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,e.aa985.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,e.v02u9.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,e701.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ehxyz.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ethod.gzgmjcx.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,focuscat.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,game.qidian.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hdswgc.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,jyd.fjzdmy.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,m.ourlj.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,m.txtxr.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,m.vsxet.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,miam4.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,o.if.qidian.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,p.vq6nsu.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,picture.duokan.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,push.zhangyue.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pyerc.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,s1.cmfu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sc.shayugg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sdk.cferw.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sezvc.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sys.zhangyue.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tjlog.ps.easou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tongji.qidian.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ut2.shuqistat.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,xgcsr.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,xjq.jxmqkj.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,xpe.cxaerp.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,xtzxmy.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,xyrkl.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,zhuanfakong.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.toutiao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dsp.toutiao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ic.snssdk.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,log.snssdk.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,nativeapp.toutiao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pangolin.snssdk.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,partner.toutiao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pglstatp-toutiao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sm.toutiao.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,a.dangdang.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,click.dangdang.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,schprompt.dangdang.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,t.dangdang.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.duomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,boxshows.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,staticxx.facebook.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,click1n.soufun.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,clickm.fang.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,clickn.fang.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,countpvn.light.fang.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,countubn.light.soufun.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mshow.fang.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tongji.home.soufun.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,admob.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads.gmodules.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads.google.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adservice.google.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,afd.l.google.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,badad.googleplex.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,csi.gstatic.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,doubleclick.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,doubleclick.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,google-analytics.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,googleadservices.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,googleadsserving.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,googlecommerce.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,googlesyndication.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mobileads.google.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pagead-tpc.l.google.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pagead.google.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pagead.l.google.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,service.urchin.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads.union.jd.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,c-nfa.jd.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cps.360buy.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,img-x.jd.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,jrclick.jd.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,jzt.jd.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,policy.jd.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stat.m.jd.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads.service.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adsfile.bssdlbig.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,d.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,downmobile.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gad.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,game.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gamebox.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gcapi.sy.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gg.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,install.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,install2.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,kgmobilestat.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,kuaikaiapp.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,log.stat.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,log.web.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,minidcsc.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mo.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mobilelog.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,msg.mobile.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mvads.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,p.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,push.mobile.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rtmonitor.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sdn.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tj.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,update.mobile.kugou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,apk.shouji.koowo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,deliver.kuwo.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,g.koowo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,g.kuwo.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,kwmsg.kuwo.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,log.kuwo.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mobilead.kuwo.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,msclick2.kuwo.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,msphoneclick.kuwo.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,updatepage.kuwo.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wa.kuwo.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,webstat.kuwo.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,aider-res.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,api-flow.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,api-game.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,api-push.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,aries.mzres.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bro.flyme.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cal.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ebook.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ebook.res.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,game-res.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,game.res.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,infocenter.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,openapi-news.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,push.res.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,reader.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,reader.res.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,t-e.flyme.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,t-flow.flyme.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tongji-res1.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tongji.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,umid.orion.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,upush.res.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,uxip.meizu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,a.koudai.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adui.tg.meitu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,corp.meitu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dc.meitustat.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gg.meitu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mdc.meitustat.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,meitubeauty.meitudata.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,message.meitu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rabbit.meitustat.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rabbit.tg.meitu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tuiguang.meitu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,xiuxiu.android.dl.meitu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,xiuxiu.mobile.meitudata.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,a.market.xiaomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.xiaomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad1.xiaomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adv.sec.intl.miui.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adv.sec.miui.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bss.pandora.xiaomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,d.g.mi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,data.mistat.xiaomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,de.pandora.xiaomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dvb.pandora.xiaomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,jellyfish.pandora.xiaomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,migc.g.mi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,migcreport.g.mi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,notice.game.xiaomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ppurifier.game.xiaomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,r.browser.miui.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,security.browser.miui.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,shenghuo.xiaomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stat.pandora.xiaomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,union.mi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wtradv.market.xiaomi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.api.moji.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,app.moji001.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cdn.moji002.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cdn2.moji002.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,fds.api.moji.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,log.moji.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stat.moji.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ugc.moji001.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.qingting.fm,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,admgr.qingting.fm,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dload.qd.qingting.fm,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,logger.qingting.fm,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,s.qd.qingting.fm,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,s.qd.qingtingfm.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-KEYWORD,omgmtaw,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN,adsmind.apdcdn.tc.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN,adsmind.gdtimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN,adsmind.tc.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN,pgdt.gtimg.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN,pgdt.gtimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN,pgdt.ugdtimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN,splashqqlive.gtimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN,wa.gtimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN,wxsnsdy.wxs.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN,wxsnsdythumb.wxs.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,act.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.qun.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adsfile.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bugly.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,buluo.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,e.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gdt.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,l.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,monitor.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pingma.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pingtcss.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,report.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tajs.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tcss.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,uu.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ebp.renren.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,jebe.renren.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,jebe.xnimg.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.sina.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adbox.sina.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,add.sina.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adimg.mobile.sina.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adm.sina.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,alitui.weibo.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,biz.weibo.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cre.dp.sina.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dcads.sina.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dd.sina.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dmp.sina.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,game.weibo.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gw5.push.mcp.weibo.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,leju.sina.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,log.mix.sina.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mobileads.dx.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,newspush.sinajs.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pay.mobile.sina.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sax.mobile.sina.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sax.sina.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,saxd.sina.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sdkapp.mobile.sina.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sdkapp.uve.weibo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sdkclick.mobile.sina.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,slog.sina.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,trends.mobile.sina.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tui.weibo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,u1.img.mobile.sina.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wax.weibo.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wbapp.mobile.sina.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wbapp.uve.weibo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wbclick.mobile.sina.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wbpctips.mobile.sina.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,zymo.mps.weibo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,123.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,123.sogoucdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adsence.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,amfi.gou.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,brand.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cpc.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,epro.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,fair.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,files2.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,galaxy.sogoucdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,golden1.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,goto.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,inte.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,iwan.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,lu.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,lu.sogoucdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pb.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pd.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pv.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,theta.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wan.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wangmeng.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,applovin.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,guangzhuiyuan.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads-twitter.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads.twitter.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,analytics.twitter.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,p.twitter.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,scribe.twitter.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,syndication-o.twitter.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,syndication.twitter.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tellapart.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,urls.api.twitter.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adslot.uc.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,api.mp.uc.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,applog.uc.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,client.video.ucweb.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cms.ucweb.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dispatcher.upmc.uc.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,huichuan.sm.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,log.cs.pp.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,m.uczzd.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,patriot.cs.pp.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,puds.ucweb.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,server.m.pp.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,track.uc.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,u.uc123.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,u.ucfly.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,uc.ucweb.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ucsec.ucweb.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ucsec1.ucweb.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,aoodoo.feng.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,fengbuy.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,push.feng.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,we.tm,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,yes1.feng.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.docer.wps.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adm.zookingsoft.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bannera.kingsoft-office-service.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bole.shangshufang.ksosoft.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,counter.kingsoft.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,docerad.wps.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gou.wps.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hoplink.ksosoft.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ic.ksosoft.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,img.gou.wpscdn.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,info.wps.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ios-informationplatform.wps.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,minfo.wps.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mo.res.wpscdn.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,news.docer.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,notify.wps.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pc.uf.ksosoft.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pcfg.wps.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pixiu.shangshufang.ksosoft.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,push.wps.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rating6.kingsoft-office-service.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,up.wps.kingsoft.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wpsweb-dc.wps.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,c.51y5.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cdsget.51y5.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,news-imgpb.51y5.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wifiapidd.51y5.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wkanc.51y5.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adse.ximalaya.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,linkeye.ximalaya.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,location.ximalaya.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,xdcs-collector.ximalaya.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,biz5.kankan.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,float.kankan.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hub5btmain.sandai.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hub5emu.sandai.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,logic.cpm.cm.kankan.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,upgrade.xl9.xunlei.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.wretch.cc,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adserver.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adss.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,analytics.query.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,analytics.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ane.yahoo.co.jp,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ard.yahoo.co.jp,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,beap-bc.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,clicks.beap.bc.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,comet.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,doubleplay-conf-yql.media.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,flurry.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gemini.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,geo.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,js-apac-ss.ysm.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,locdrop.query.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,onepush.query.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,p3p.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,partnerads.ysm.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ws.progrss.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,yads.yahoo.co.jp,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ybp.yahoo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,shrek.6.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,simba.6.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,union.6.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,logger.baofeng.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,xs.houyi.baofeng.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dotcounter.douyutv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,api.newad.ifeng.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,exp.3g.ifeng.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,game.ifeng.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,iis3g.deliver.ifeng.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mfp.deliver.ifeng.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stadig.ifeng.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adm.funshion.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,jobsfe.funshion.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,po.funshion.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pub.funshion.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pv.funshion.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stat.funshion.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.m.iqiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,afp.iqiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,c.uaa.iqiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cloudpush.iqiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cm.passport.iqiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cupid.iqiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,emoticon.sns.iqiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gamecenter.iqiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ifacelog.iqiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mbdlog.iqiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,meta.video.qiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,msg.71.am,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,msg1.video.qiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,msg2.video.qiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,paopao.iqiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,paopaod.qiyipic.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,policy.video.iqiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,yuedu.iqiyi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - IP-CIDR,101.227.200.0/24,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,101.227.200.11/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,101.227.200.28/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,101.227.97.240/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,124.192.153.42/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - DOMAIN-SUFFIX,gug.ku6cdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pq.stat.ku6.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,st.vq.ku6.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,static.ku6.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,1.letvlive.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,2.letvlive.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ark.letv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dc.letv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,fz.letv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,g3.letv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,game.letvstore.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,i0.letvimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,i3.letvimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,minisite.letv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,n.mark.letv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pro.hoye.letv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pro.letv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stat.letv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,static.app.m.letv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,click.hunantv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,da.hunantv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,da.mgtv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,log.hunantv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,log.v2.hunantv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,p2.hunantv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,res.hunantv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,888.tv.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adnet.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,aty.hd.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,aty.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bd.hd.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,click.hd.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,click2.hd.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ctr.hd.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,epro.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,epro.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,go.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,golden1.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,golden1.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hui.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,inte.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,inte.sogoucdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,inte.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,lm.tv.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,lu.sogoucdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pb.hd.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,push.tv.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pv.hd.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pv.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pv.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,theta.sogoucdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,um.hd.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,uranus.sogou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,uranus.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wan.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wl.hd.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,yule.sohu.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,afp.pplive.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,app.aplus.pptv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,as.aplus.pptv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,asimgs.pplive.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,de.as.pptv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,jp.as.pptv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pp2.pptv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stat.pptv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,btrace.video.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,c.l.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dp3.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,livep.l.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,lives.l.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,livew.l.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mcgi.v.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mdevstat.qqlive.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,omgmta1.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,p.l.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,rcgi.video.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,t.l.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,u.l.qq.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,a-dxk.play.api.3g.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,actives.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.api.3g.tudou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.api.3g.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.api.mobile.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.mobile.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adcontrol.tudou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adplay.tudou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,b.smartvideo.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,c.yes.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dev-push.m.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dl.g.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dmapp.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,e.stat.ykimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gamex.mobile.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,goods.tudou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hudong.pl.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hz.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,iwstat.tudou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,iyes.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,l.ykimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,l.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,lstat.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,lvip.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mobilemsg.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,msg.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,myes.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,nstat.tudou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,p-log.ykimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,p.l.ykimg.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,p.l.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,passport-log.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,push.m.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,r.l.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,s.p.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sdk.m.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stat.tudou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stat.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stats.tudou.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,store.tv.api.3g.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,store.xl.api.3g.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tdrec.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,test.ott.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,v.l.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,val.api.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,wan.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ykatr.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ykrec.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ykrectab.youku.com,馃洃 鍏ㄧ悆鎷︽埅
+  - IP-CIDR,117.177.248.17/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,117.177.248.41/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,223.87.176.139/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,223.87.176.176/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,223.87.177.180/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,223.87.177.182/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,223.87.177.184/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,223.87.177.43/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,223.87.177.47/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,223.87.177.80/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,223.87.182.101/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,223.87.182.102/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,223.87.182.11/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - IP-CIDR,223.87.182.52/32,馃洃 鍏ㄧ悆鎷︽埅,no-resolve
+  - DOMAIN-SUFFIX,azabu-u.ac.jp,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,couchcoaster.jp,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,delivery.dmkt-sp.jp,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ehg-youtube.hitbox.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,nichibenren.or.jp,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,nicorette.co.kr,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ssl-youtube.2cnt.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,youtube.112.2o7.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,youtube.2cnt.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,acsystem.wasu.tv,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads.cdn.tvb.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads.wasu.tv,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,afp.wasu.tv,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,c.algovid.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gg.jtertp.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,gridsum-vd.cntv.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,kwflvcdn.000dn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,logstat.t.sfht.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,match.rtbidder.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,n-st.vip.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pop.uusee.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,static.duoshuo.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,t.cr-nielsen.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,terren.cntv.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,1.win7china.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,168.it168.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,2.win7china.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,801.tianya.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,801.tianyaui.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,803.tianya.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,803.tianyaui.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,806.tianya.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,806.tianyaui.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,808.tianya.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,808.tianyaui.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,92x.tumblr.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,a1.itc.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad-channel.wikawika.xyz,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad-display.wikawika.xyz,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.12306.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.3.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.95306.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.caiyunapp.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.cctv.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.cmvideo.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.csdn.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.ganji.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.house365.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.thepaper.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ad.unimhk.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adadmin.house365.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adhome.1fangchan.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adm.10jqka.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads.csdn.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads.feedly.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads.genieessp.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads.house365.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ads.linkedin.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adshownew.it168.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,adv.ccb.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,advert.api.thejoyrun.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,analytics.ganji.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,api-deal.kechenggezi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,api-z.weidian.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,app-monitor.ele.me,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bat.bing.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bd1.52che.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bd2.52che.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bdj.tianya.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,bdj.tianyaui.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,beacon.tingyun.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,cdn.jiuzhilan.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,click.cheshi-img.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,click.cheshi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,click.ganji.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,click.tianya.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,click.tianyaui.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,client-api.ele.me,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,collector.githubapp.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,counter.csdn.net,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,d0.xcar.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,de.soquair.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dol.tianya.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dol.tianyaui.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,dw.xcar.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,e.nexac.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,eq.10jqka.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,exp.17wo.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,game.51yund.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ganjituiguang.ganji.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,grand.ele.me,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,hosting.miarroba.info,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,iadsdk.apple.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,image.gentags.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,its-dori.tumblr.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,log.outbrain.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,m.12306media.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,media.cheshi-img.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,media.cheshi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mobile-pubt.ele.me,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,mobileads.msn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,n.cosbot.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,newton-api.ele.me,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ozone.10jqka.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pdl.gionee.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pica-juicy.picacomic.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pixel.wp.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pub.mop.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,push.wandoujia.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pv.cheshi-img.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pv.cheshi.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,pv.xcar.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,qdp.qidian.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,res.gwifi.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,ssp.kssws.ks-cdn.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,sta.ganji.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stat.10jqka.com.cn,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stat.it168.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stats.chinaz.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,stats.developingperspective.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,track.hujiang.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tracker.yhd.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,tralog.ganji.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,up.qingdaonews.com,馃洃 鍏ㄧ悆鎷︽埅
+  - DOMAIN-SUFFIX,vaserviece.10jqka.com.cn,馃洃 鍏ㄧ悆鎷︽埅
   - DOMAIN-SUFFIX,265.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,2mdn.net,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,alt1-mtalk.google.com,馃幆 鍏ㄧ悆鐩磋繛
@@ -2062,34 +1814,24 @@ rules:
   - DOMAIN-SUFFIX,alt7-mtalk.google.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,alt8-mtalk.google.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,app-measurement.com,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,c.android.clients.google.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,cache.pack.google.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,clickserve.dartsearch.net,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,clientservices.googleapis.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,crl.pki.goog,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,dl.google.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,dl.l.google.com,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,fonts.googleapis.com,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,fonts.gstatic.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,googletagmanager.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,googletagservices.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,gtm.oasisfeng.com,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,imasdk.googleapis.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,mtalk.google.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,ocsp.pki.goog,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,recaptcha.net,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,safebrowsing-cache.google.com,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,safebrowsing.googleapis.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,settings.crashlytics.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,ssl-google-analytics.l.google.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,toolbarqueries.google.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,tools.google.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,tools.l.google.com,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,update.googleapis.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,www-googletagmanager.l.google.com,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,www.gstatic.com,馃幆 鍏ㄧ悆鐩磋繛
-# 鍐呭�癸細SteamCN
-# 鏁伴噺锛�15鏉�
   - DOMAIN,csgo.wmsj.cn,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN,dl.steam.clngaa.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN,dl.steam.ksyna.com,馃幆 鍏ㄧ悆鐩磋繛
@@ -2101,552 +1843,355 @@ rules:
   - DOMAIN,steampowered.com.8686c.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN,steamstatic.com.8686c.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN,wmsjsteam.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,xz.pphimalayanrt.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,cm.steampowered.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,steamchina.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,steamcontent.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,steamusercontent.com,馃幆 鍏ㄧ悆鐩磋繛
-# Microsoft Services
-# optimized from https://gist.github.com/TTTPOB/ce93fb3b04ba2f21880b09427442d831
-# source: https://docs.microsoft.com/en-us/office365/enterprise/urls-and-ip-address-ranges
-  - DOMAIN-KEYWORD,1drv,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-KEYWORD,microsoft,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,aadrm.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,acompli.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,acompli.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,aka.ms,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,akadns.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,aspnetcdn.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,assets-yammer.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,azure.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,azure.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,azureedge.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,azurerms.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,bing.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,cloudapp.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,cloudappsecurity.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,edgesuite.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,gfx.ms,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,hotmail.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,live.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,live.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,lync.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,msappproxy.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,msauth.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,msauthimages.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,msecnd.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,msedge.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,msft.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,msftauth.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,msftauthimages.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,msftidentity.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,msidentity.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,msn.cn,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,msn.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,msocdn.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,msocsp.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,mstea.ms,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,o365weve.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,oaspapps.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,office.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,office.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,office365.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,officeppe.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,omniroot.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,onedrive.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,onenote.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,onenote.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,onestore.ms,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,outlook.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,outlookmobile.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,phonefactor.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,public-trust.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,sfbassets.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,sfx.ms,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,sharepoint.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,sharepointonline.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,skype.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,skypeassets.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,skypeforbusiness.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,staffhub.ms,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,svc.ms,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,sway-cdn.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,sway-extensions.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,sway.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,trafficmanager.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,uservoice.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,virtualearth.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,visualstudio.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,windows-ppe.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,windows.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,windows.net,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,windowsazure.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,windowsupdate.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,wunderlist.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,yammer.com,鈸傦笍 寰�杞�鏈嶅姟
-  - DOMAIN-SUFFIX,yammerusercontent.com,鈸傦笍 寰�杞�鏈嶅姟
-# Apple
-# 涓�鑸�鍥藉唴Apple鑲�瀹氭�ｅ父,涓嶉渶瑕佸紑浠ｇ悊
-  - DOMAIN,apple.comscoreresearch.com,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,aaplimg.com,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,akadns.net,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,apple-cloudkit.com,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,apple-mapkit.com,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,apple.co,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,apple.com,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,apple.com.cn,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,apple.news,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,appstore.com,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,cdn-apple.com,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,crashlytics.com,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,icloud-content.com,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,icloud.com,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,icloud.com.cn,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,itunes.com,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,me.com,馃崕 鑻规灉鏈嶅姟
-  - DOMAIN-SUFFIX,mzstatic.com,馃崕 鑻规灉鏈嶅姟
-  - IP-CIDR,17.0.0.0/8,馃崕 鑻规灉鏈嶅姟,no-resolve
-  - IP-CIDR,63.92.224.0/19,馃崕 鑻规灉鏈嶅姟,no-resolve
-  - IP-CIDR,65.199.22.0/23,馃崕 鑻规灉鏈嶅姟,no-resolve
-  - IP-CIDR,139.178.128.0/18,馃崕 鑻规灉鏈嶅姟,no-resolve
-  - IP-CIDR,144.178.0.0/19,馃崕 鑻规灉鏈嶅姟,no-resolve
-  - IP-CIDR,144.178.36.0/22,馃崕 鑻规灉鏈嶅姟,no-resolve
-  - IP-CIDR,144.178.48.0/20,馃崕 鑻规灉鏈嶅姟,no-resolve
-  - IP-CIDR,192.35.50.0/24,馃崕 鑻规灉鏈嶅姟,no-resolve
-  - IP-CIDR,198.183.17.0/24,馃崕 鑻规灉鏈嶅姟,no-resolve
-  - IP-CIDR,205.180.175.0/24,馃崕 鑻规灉鏈嶅姟,no-resolve
-# 鍐呭�癸細鍥藉�栧獟浣撳垪琛�
-# 鏇存柊锛�2023-01-15 22:06:33
-# 鏁伴噺锛�330鏉�
-# ABC
-# AbemaTV
-# All4
-# Amazon
-# AppleNews
-# AppleTV
-# BBCiPlayer
-# Bahamut
-# DAZN
-# Deezer
-# DiscoveryPlus
-# DisneyPlus
-# EncoreTVB
-# FoxNow
-# HBO
-# HBO_GO_HKG
-# HWTV
-# Hulu
-# HuluJapan
-# ITV
-# JOOX
-# Japonx
-# KKBOX
-# KKTV
-# LiTV
-# LineTV
-# My5
-# MyTVSuper
-# Netflix
-# Niconico
-# PBS
-# Pandora
-# Pornhub
-# Qobuz
-# SoundCloud
-# Spotify
-# TIDAL
-# TaiWanGood 鍙版咕濂�
-# TikTok
-# Twitch
-# ViuTV
-# YouTube
-# YouTubeMusic
-  - DOMAIN-SUFFIX,edgedatg.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,go.com,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,AbemaTV*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,abematv.akamaized.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,api-abematv.bucketeer.jp,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,abema-tv.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,abema.io,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,abema.tv,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,ameba.jp,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hayabusa.io,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hayabusa.media,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,All4*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,c4assets.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,channel4.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,avoddashs,馃實 鍥藉�栧獟浣�
-  - DOMAIN,atv-ps.amazon.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN,avodmp4s3ww-a.akamaihd.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,d1v5ir2lpwr8os.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,d1xfray82862hr.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,d22qjgkvxw22r6.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,d25xi40x97liuc.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,d27xxe7juh1us6.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,d3196yreox78o9.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,dmqdd6hw24ucf.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,ktpx.amazon.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,aboutamazon.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,aiv-cdn.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,aiv-delivery.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,amazon.jobs,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,amazonuniversity.jobs,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,amazonvideo.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,media-amazon.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,pv-cdn.net,馃實 鍥藉�栧獟浣�
-#   - URL-REGEX,^https?:\/\/www\.amazon\.com\/(Amazon-Video|gp\/video)\/,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,AppleNews*,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,com.apple.news*,馃實 鍥藉�栧獟浣�
-  - DOMAIN,gspe1-ssl.ls.apple.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN,np-edge.itunes.apple.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN,play-edge.itunes.apple.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,tv.apple.com,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,BBCiPlayer*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,bbcfmt,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,uk-live,馃實 鍥藉�栧獟浣�
-  - DOMAIN,aod-dash-uk-live.akamaized.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,aod-hls-uk-live.akamaized.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,vod-dash-uk-live.akamaized.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,vod-thumb-uk-live.akamaized.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,bbc.co,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,bbc.co.uk,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,bbc.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,bbc.net.uk,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,bbcfmt.hs.llnwd.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,bbci.co,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,bbci.co.uk,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,bidi.net.uk,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,Anime*,馃實 鍥藉�栧獟浣�
-  - DOMAIN,bahamut.akamaized.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,gamer-cds.cdn.hinet.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,gamer2-cds.cdn.hinet.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,bahamut.com.tw,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,gamer.com.tw,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,DAZN*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,voddazn,馃實 鍥藉�栧獟浣�
-  - DOMAIN,d151l6v8er5bdm.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,d151l6v8er5bdm.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,d1sgwhnao7452x.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,dazn-api.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,dazn.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,dazndn.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,dcblivedazn.akamaized.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,indazn.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,indaznlab.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,sentry.io,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,Deezer*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,deezer.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,dzcdn.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,disco-api.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,discovery.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,uplynk.com,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,Disney*,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,Disney+*,馃實 鍥藉�栧獟浣�
-  - DOMAIN,cdn.registerdisney.go.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,adobedtm.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,bam.nr-data.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,bamgrid.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,braze.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,cdn.optimizely.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,cdn.registerdisney.go.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,cws.conviva.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,d9.flashtalking.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,disney-plus.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,disney-portal.my.onetrust.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,disney.demdex.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,disney.my.sentry.io,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,disneyplus.bn5x.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,disneyplus.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,disneyplus.com.ssl.sc.omtrdc.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,disneystreaming.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,dssott.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,execute-api.us-east-1.amazonaws.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,js-agent.newrelic.com,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,encoreTVB*,馃實 鍥藉�栧獟浣�
-  - DOMAIN,bcbolt446c5271-a.akamaihd.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,content.jwplatform.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN,edge.api.brightcove.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN,videos-f.jwpsrv.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,encoretvb.com,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,FOX%20NOW*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,fox.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,foxdcg.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,uplynk.com,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,HBO%20NOW*,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,HBOMAX*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hbo.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hbogo.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hbomax.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hbomaxcdn.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hbonow.com,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,HBO%20GO%20PROD*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,.hbogoasia.,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,hbogoasia,馃實 鍥藉�栧獟浣�
-  - DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN,bcbolthboa-a.akamaihd.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,dai3fd1oh325y.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,hboasia1-i.akamaihd.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,hboasia2-i.akamaihd.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,hboasia3-i.akamaihd.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,hboasia4-i.akamaihd.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,hboasia5-i.akamaihd.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,hboasialive.akamaized.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,hbogoprod-vod.akamaized.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,hbolb.onwardsmg.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN,hbounify-prod.evergent.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN,players.brightcove.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,s3-ap-southeast-1.amazonaws.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hboasia.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hbogoasia.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hbogoasia.hk,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,HWTVMobile*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,5itv.tv,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,ocnttv.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,cws-hulu.conviva.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hulu.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hulu.hb.omtrdc.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hulu.sc.omtrdc.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,huluad.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,huluim.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hulustream.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,happyon.jp,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hjholdings.jp,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,hulu.jp,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,prod.hjholdings.tv,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,streaks.jp,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,yb.uncn.jp,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,ITV_Player*,馃實 鍥藉�栧獟浣�
-  - DOMAIN,itvpnpmobile-a.akamaihd.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,itv.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,itvstatic.com,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,JOOX*,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,WeMusic*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,jooxweb-api,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,joox.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,japonx,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,japronx,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,japonx.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,japonx.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,japonx.tv,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,japonx.vip,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,japronx.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,japronx.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,japronx.tv,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,japronx.vip,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,kfs.io,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,kkbox.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,kkbox.com.tw,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,KKTV*,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,com.kktv.ios.kktv*,馃實 鍥藉�栧獟浣�
-  - DOMAIN,kktv-theater.kk.stream,馃實 鍥藉�栧獟浣�
-  - DOMAIN,theater-kktv.cdn.hinet.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,kktv.com.tw,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,kktv.me,馃實 鍥藉�栧獟浣�
-  - DOMAIN,litvfreemobile-hichannel.cdn.hinet.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,litv.tv,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,LINE%20TV*,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,LINE*,馃實 鍥藉�栧獟浣�
-  - DOMAIN,d3c7rimkq79yfu.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,d3c7rimkq79yfu.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,linetv.tw,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,profile.line-scdn.net,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,My5*,馃實 鍥藉�栧獟浣�
-  - DOMAIN,d349g9zuie06uo.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,channel5.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,my5.tv,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,mytv*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,nowtv100,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,rthklive,馃實 鍥藉�栧獟浣�
-  - DOMAIN,mytvsuperlimited.hb.omtrdc.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,mytvsuperlimited.sc.omtrdc.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,mytvsuper.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,tvb.com,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,Argo*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,apiproxy-device-prod-nlb-,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,dualstack.apiproxy-,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,netflixdnstest,馃實 鍥藉�栧獟浣�
-  - DOMAIN,netflix.com.edgesuite.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,fast.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,netflix.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,netflix.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,netflixdnstest0.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,netflixdnstest1.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,netflixdnstest2.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,netflixdnstest3.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,netflixdnstest4.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,netflixdnstest5.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,netflixdnstest6.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,netflixdnstest7.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,netflixdnstest8.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,netflixdnstest9.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,nflxext.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,nflximg.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,nflximg.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,nflxso.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,nflxvideo.net,馃實 鍥藉�栧獟浣�
-  - IP-CIDR,8.41.4.0/24,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,23.246.0.0/18,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,37.77.184.0/21,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,38.72.126.0/24,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,45.57.0.0/17,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,64.120.128.0/17,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,66.197.128.0/17,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,69.53.224.0/19,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,103.87.204.0/22,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,108.175.32.0/20,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,185.2.220.0/22,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,185.9.188.0/22,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,192.173.64.0/18,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,198.38.96.0/19,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,198.45.48.0/20,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,207.45.72.0/22,馃實 鍥藉�栧獟浣�,no-resolve
-  - IP-CIDR,208.75.76.0/22,馃實 鍥藉�栧獟浣�,no-resolve
-#   - USER-AGENT,Niconico*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,dmc.nico,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,nicovideo.jp,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,nimg.jp,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,PBS*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,pbs.org,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,Pandora*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,pandora.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,phncdn.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,phprcdn.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,pornhub.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,pornhubpremium.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,qobuz.com,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,SoundCloud*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,p-cdn.us,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,sndcdn.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,soundcloud.com,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,Spotify*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,-spotify-com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,spotify.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,pscdn.co,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,scdn.co,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,spoti.fi,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,spotify.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,spotifycdn.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,spotifycdn.net,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,TIDAL*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,tidal-cms.s3.amazonaws.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,tidal.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,tidalhifi.com,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,TaiwanGood*,馃實 鍥藉�栧獟浣�
-  - DOMAIN,hamifans.emome.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,skyking.com.tw,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,TikTok*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,tiktokcdn-,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,byteoversea.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,ibytedtos.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,ipstatp.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,muscdn.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,musical.ly,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,tik-tokapi.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,tiktok.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,tiktokcdn.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,tiktokv.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,ttvnw,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,ext-twitch.tv,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,jtvnw.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,ttvnw.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,twitch-ext.rootonline.de,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,twitch.tv,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,twitchcdn.net,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,Viu*,馃實 鍥藉�栧獟浣�
-  - PROCESS-NAME,com.viu.pad,馃實 鍥藉�栧獟浣�
-  - PROCESS-NAME,com.viu.phone,馃實 鍥藉�栧獟浣�
-  - PROCESS-NAME,com.vuclip.viu,馃實 鍥藉�栧獟浣�
-  - DOMAIN,api.viu.now.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN,d1k2us671qcoau.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,d2anahhhmp1ffz.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN,dfp6rglgjqszk.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,cognito-identity.us-east-1.amazonaws.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,d1k2us671qcoau.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,d2anahhhmp1ffz.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,dfp6rglgjqszk.cloudfront.net,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,mobileanalytics.us-east-1.amazonaws.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,viu.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,viu.now.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,viu.tv,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,*youtube*,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,YouTube*,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,com.google.ios.youtube*,馃實 鍥藉�栧獟浣�
-  - DOMAIN-KEYWORD,youtube,馃實 鍥藉�栧獟浣�
-  - DOMAIN,youtubei.googleapis.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN,yt3.ggpht.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,googlevideo.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,gvt2.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,withyoutube.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,youtu.be,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,youtube-nocookie.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,youtube.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,youtubeeducation.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,youtubegaming.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,youtubekids.com,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,yt.be,馃實 鍥藉�栧獟浣�
-  - DOMAIN-SUFFIX,ytimg.com,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,*YouTubeMusic*,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,*com.google.ios.youtubemusic*,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,YouTubeMusic*,馃實 鍥藉�栧獟浣�
-#   - USER-AGENT,com.google.ios.youtubemusic*,馃實 鍥藉�栧獟浣�
-  - DOMAIN,music.youtube.com,馃實 鍥藉�栧獟浣�
-# Telegram
-#PROCESS-NAME,Telegram.exe
-#PROCESS-NAME,org.telegram.messenger
-  - DOMAIN-SUFFIX,t.me,馃摬 鐢垫姤淇℃伅
-  - DOMAIN-SUFFIX,tdesktop.com,馃摬 鐢垫姤淇℃伅
-  - DOMAIN-SUFFIX,telegra.ph,馃摬 鐢垫姤淇℃伅
-  - DOMAIN-SUFFIX,telegram.me,馃摬 鐢垫姤淇℃伅
-  - DOMAIN-SUFFIX,telegram.org,馃摬 鐢垫姤淇℃伅
-  - DOMAIN-SUFFIX,telesco.pe,馃摬 鐢垫姤淇℃伅
-  - IP-CIDR,91.108.0.0/16,馃摬 鐢垫姤淇℃伅,no-resolve
-  - IP-CIDR,109.239.140.0/24,馃摬 鐢垫姤淇℃伅,no-resolve
-  - IP-CIDR,149.154.160.0/20,馃摬 鐢垫姤淇℃伅,no-resolve
-  - IP-CIDR6,2001:67c:4e8::/48,馃摬 鐢垫姤淇℃伅,no-resolve
-  - IP-CIDR6,2001:b28:f23d::/48,馃摬 鐢垫姤淇℃伅,no-resolve
-  - IP-CIDR6,2001:b28:f23f::/48,馃摬 鐢垫姤淇℃伅,no-resolve
-# 闀块�庣綉绔欙紝鑷�鍔ㄦ敞鍏�
-  - DOMAIN-SUFFIX,v2rayse.com,馃殌 鑺傜偣閫夋嫨
-  - DOMAIN-SUFFIX,cff.pw,馃殌 鑺傜偣閫夋嫨
-  - DOMAIN-SUFFIX,vpnse.org,馃殌 鑺傜偣閫夋嫨
-  - DOMAIN-SUFFIX,cfmem.com,馃殌 鑺傜偣閫夋嫨
-# 浠ｇ悊鍒楄〃
-# MyList && Other
-# 鍥藉�栧煙鍚�
-# 鍥藉�栧煙鍚嶅叧閿�瀛�
-# Top Blocked Sites
-# Amazon
-# BBC
-# Developer 寮�鍙戣�呭父鐢ㄥ浗澶栫綉绔欍�侀暅鍍忓拰璁哄潧
-# Discord
-# Facebook
-# Github
-# Google
-# GoogleCNProxyIP 璋锋瓕涓�鍥芥湇鍔� services.googleapis.cn
-# Instagram
-# Kakao Talk
-# Line
-# OneDrive
-#DOMAIN-SUFFIX,aria.microsoft.com
-# Porn
-# Pixiv
-# Spark
-# Steam
-# TapTap
-# Twitch
-# Twitter
-# Telegram
-# TeraBox
-# Whatsapp
-# Wikipedia 缁村熀鐩稿叧鍩熷悕
-#椋炴祦鐩存挱
-#鍗庢枃鐢佃��
-# VikACG
+  - DOMAIN-SUFFIX,t.me,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,tdesktop.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,telegra.ph,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,telegram.me,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,telegram.org,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,telesco.pe,馃殌 鑺傜偣閫夋嫨
+  - IP-CIDR,91.108.0.0/16,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,109.239.140.0/24,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,149.154.160.0/20,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR6,2001:67c:4e8::/48,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR6,2001:b28:f23d::/48,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR6,2001:b28:f23f::/48,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - DOMAIN-SUFFIX,edgedatg.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,go.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,abematv.akamaized.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,api-abematv.bucketeer.jp,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,abema-tv.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,abema.io,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,abema.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,ameba.jp,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hayabusa.io,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hayabusa.media,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,c4assets.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,channel4.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,avoddashs,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,atv-ps.amazon.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,avodmp4s3ww-a.akamaihd.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,d1v5ir2lpwr8os.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,d1xfray82862hr.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,d22qjgkvxw22r6.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,d25xi40x97liuc.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,d27xxe7juh1us6.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,d3196yreox78o9.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,dmqdd6hw24ucf.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,ktpx.amazon.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,aboutamazon.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,aiv-cdn.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,aiv-delivery.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,amazon.jobs,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,amazontools.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,amazontours.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,amazonuniversity.jobs,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,amazonvideo.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,media-amazon.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,pv-cdn.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,seattlespheres.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,gspe1-ssl.ls.apple.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,np-edge.itunes.apple.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,play-edge.itunes.apple.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,tv.apple.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,bbcfmt,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,uk-live,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,aod-dash-uk-live.akamaized.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,aod-hls-uk-live.akamaized.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,vod-dash-uk-live.akamaized.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,vod-thumb-uk-live.akamaized.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,bbc.co,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,bbc.co.uk,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,bbc.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,bbc.net.uk,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,bbcfmt.hs.llnwd.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,bbci.co,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,bbci.co.uk,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,bidi.net.uk,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,bahamut.akamaized.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,gamer-cds.cdn.hinet.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,gamer2-cds.cdn.hinet.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,bahamut.com.tw,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,gamer.com.tw,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,bilibili.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,bstarstatic.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,pic-bstarstatic.akamaized.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,voddazn,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,d151l6v8er5bdm.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,d151l6v8er5bdm.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,d1sgwhnao7452x.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,dazn-api.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,dazn.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,dazndn.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,dcblivedazn.akamaized.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,indazn.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,indaznlab.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,sentry.io,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,deezer.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,dzcdn.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,disco-api.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,discovery.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,uplynk.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,cdn.registerdisney.go.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,adobedtm.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,bam.nr-data.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,bamgrid.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,braze.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,cdn.optimizely.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,cdn.registerdisney.go.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,cws.conviva.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,d9.flashtalking.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,disney-plus.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,disney-portal.my.onetrust.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,disney.demdex.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,disney.my.sentry.io,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,disneyplus.bn5x.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,disneyplus.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,disneyplus.com.ssl.sc.omtrdc.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,disneystreaming.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,dssott.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,execute-api.us-east-1.amazonaws.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,js-agent.newrelic.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,bcbolt446c5271-a.akamaihd.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,content.jwplatform.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,edge.api.brightcove.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,videos-f.jwpsrv.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,encoretvb.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,fox.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,foxdcg.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,uplynk.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hbo.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hbogo.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hbomax.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hbomaxcdn.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hbonow.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,hbogoasia,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,bcbolthboa-a.akamaihd.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,dai3fd1oh325y.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,hboasia1-i.akamaihd.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,hboasia2-i.akamaihd.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,hboasia3-i.akamaihd.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,hboasia4-i.akamaihd.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,hboasia5-i.akamaihd.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,hboasialive.akamaized.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,hbogoprod-vod.akamaized.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,hbolb.onwardsmg.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,hbounify-prod.evergent.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,players.brightcove.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,s3-ap-southeast-1.amazonaws.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hboasia.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hbogoasia.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hbogoasia.hk,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,5itv.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,ocnttv.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,cws-hulu.conviva.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hulu.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hulu.hb.omtrdc.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hulu.sc.omtrdc.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,huluad.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,huluim.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hulustream.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,happyon.jp,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hjholdings.jp,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,hulu.jp,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,prod.hjholdings.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,streaks.jp,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,yb.uncn.jp,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,itvpnpmobile-a.akamaihd.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,itv.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,itvstatic.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,jooxweb-api,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,joox.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,japonx,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,japronx,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,japonx.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,japonx.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,japonx.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,japonx.vip,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,japronx.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,japronx.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,japronx.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,japronx.vip,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,kfs.io,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,kkbox.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,kkbox.com.tw,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,kktv-theater.kk.stream,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,theater-kktv.cdn.hinet.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,kktv.com.tw,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,kktv.me,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,litvfreemobile-hichannel.cdn.hinet.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,litv.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,d3c7rimkq79yfu.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,d3c7rimkq79yfu.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,linetv.tw,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,profile.line-scdn.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,d349g9zuie06uo.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,channel5.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,my5.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,nowtv100,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,rthklive,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,mytvsuperlimited.hb.omtrdc.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,mytvsuperlimited.sc.omtrdc.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,mytvsuper.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,tvb.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,apiproxy-device-prod-nlb-,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,dualstack.apiproxy-,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,netflixdnstest,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,netflix.com.edgesuite.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,fast.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,netflix.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,netflix.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,netflixdnstest0.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,netflixdnstest1.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,netflixdnstest2.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,netflixdnstest3.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,netflixdnstest4.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,netflixdnstest5.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,netflixdnstest6.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,netflixdnstest7.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,netflixdnstest8.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,netflixdnstest9.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,nflxext.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,nflximg.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,nflximg.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,nflxso.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,nflxvideo.net,馃殌 鑺傜偣閫夋嫨
+  - IP-CIDR,8.41.4.0/24,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,23.246.0.0/18,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,37.77.184.0/21,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,38.72.126.0/24,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,45.57.0.0/17,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,64.120.128.0/17,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,66.197.128.0/17,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,69.53.224.0/19,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,103.87.204.0/22,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,108.175.32.0/20,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,185.2.220.0/22,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,185.9.188.0/22,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,192.173.64.0/18,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,198.38.96.0/19,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,198.45.48.0/20,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,203.75.84.0/24,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,207.45.72.0/22,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - IP-CIDR,208.75.76.0/22,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - DOMAIN-SUFFIX,dmc.nico,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,nicovideo.jp,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,nimg.jp,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,nivod,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,biggggg.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,mudvod.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,nbys.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,nbys1.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,nbyy.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,newpppp.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,nivod.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,nivodi.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,nivodz.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,vod360.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,olevod,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,haiwaikan.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,iole.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,olehd.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,olelive.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,olevod.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,olevod.io,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,olevod.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,olevodtv.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,openai,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,auth0.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,challenges.cloudflare.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,events.statsigapi.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,featuregates.org,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,identrust.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,intercom.io,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,intercomcdn.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,oaistatic.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,oaiusercontent.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,openai.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,sentry.io,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,stripe.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,pbs.org,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,pandora.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,phncdn.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,phprcdn.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,pornhub.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,pornhubpremium.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,qobuz.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,p-cdn.us,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,sndcdn.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,soundcloud.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,-spotify-,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,spotify.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,pscdn.co,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,scdn.co,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,spoti.fi,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,spotify.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,spotifycdn.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,spotifycdn.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,tidal-cms.s3.amazonaws.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,tidal.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,tidalhifi.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,hamifans.emome.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,skyking.com.tw,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,tiktokcdn,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,byteoversea.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,ibytedtos.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,ipstatp.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,muscdn.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,musical.ly,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,tik-tokapi.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,tiktok.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,tiktokcdn.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,tiktokv.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,ttvnw,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,ext-twitch.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,jtvnw.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,ttvnw.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,twitch-ext.rootonline.de,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,twitch.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,twitchcdn.net,馃殌 鑺傜偣閫夋嫨
+  - PROCESS-NAME,com.viu.pad,馃殌 鑺傜偣閫夋嫨
+  - PROCESS-NAME,com.viu.phone,馃殌 鑺傜偣閫夋嫨
+  - PROCESS-NAME,com.vuclip.viu,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,api.viu.now.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,d1k2us671qcoau.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,d2anahhhmp1ffz.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,dfp6rglgjqszk.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,cognito-identity.us-east-1.amazonaws.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,d1k2us671qcoau.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,d2anahhhmp1ffz.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,dfp6rglgjqszk.cloudfront.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,mobileanalytics.us-east-1.amazonaws.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,viu.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,viu.now.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,viu.tv,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-KEYWORD,youtube,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,youtubei.googleapis.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,yt3.ggpht.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,googlevideo.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,gvt2.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,withyoutube.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,youtu.be,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,youtube-nocookie.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,youtube.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,youtubeeducation.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,youtubegaming.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,youtubekids.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,yt.be,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,ytimg.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN,music.youtube.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,1password.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,adguard.org,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,bit.no.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,btlibrary.me,馃殌 鑺傜偣閫夋嫨
-  - DOMAIN-SUFFIX,chat.openai.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,cloudcone.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,dubox.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,gameloft.com,馃殌 鑺傜偣閫夋嫨
@@ -2657,13 +2202,13 @@ rules:
   - DOMAIN-SUFFIX,linkedin.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,myteamspeak.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,notion.so,馃殌 鑺傜偣閫夋嫨
-  - DOMAIN-SUFFIX,openai.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,ping.pe,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,reddit.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,teddysun.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,tumbex.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,twdvd.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,unsplash.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,buzzsprout.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,eu,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,hk,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,jp,馃殌 鑺傜偣閫夋嫨
@@ -2671,7 +2216,6 @@ rules:
   - DOMAIN-SUFFIX,sg,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,tw,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,uk,馃殌 鑺傜偣閫夋嫨
-  - DOMAIN-SUFFIX,us,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-KEYWORD,1e100,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-KEYWORD,abema,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-KEYWORD,appledaily,馃殌 鑺傜偣閫夋嫨
@@ -2822,6 +2366,8 @@ rules:
   - DOMAIN-KEYWORD,uk-live,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,bbc.co,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,bbc.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,claude.ai,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,anthropic.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,apache.org,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,docker.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,elastic.co,馃殌 鑺傜偣閫夋嫨
@@ -2938,6 +2484,8 @@ rules:
   - IP-CIDR,119.235.236.0/23,馃殌 鑺傜偣閫夋嫨,no-resolve
   - IP-CIDR,147.92.128.0/17,馃殌 鑺傜偣閫夋嫨,no-resolve
   - IP-CIDR,203.104.128.0/19,馃殌 鑺傜偣閫夋嫨,no-resolve
+  - DOMAIN-SUFFIX,openai.com,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,challenges.cloudflare.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-KEYWORD,1drv,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-KEYWORD,onedrive,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-KEYWORD,skydrive,馃殌 鑺傜偣閫夋嫨
@@ -2975,6 +2523,7 @@ rules:
   - DOMAIN-SUFFIX,ypncdn.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,pixiv.net,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,pximg.net,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,fanbox.cc,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,amplitude.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,firebaseio.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,hockeyapp.net,馃殌 鑺傜偣閫夋嫨
@@ -2993,7 +2542,6 @@ rules:
   - DOMAIN-SUFFIX,steamstatic.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,steamstat.us,馃殌 鑺傜偣閫夋嫨
   - DOMAIN,steambroadcast.akamaized.net,馃殌 鑺傜偣閫夋嫨
-  - DOMAIN,steamcdn-a.akamaihd.net,馃殌 鑺傜偣閫夋嫨
   - DOMAIN,steamcommunity-a.akamaihd.net,馃殌 鑺傜偣閫夋嫨
   - DOMAIN,steamstore-a.akamaihd.net,馃殌 鑺傜偣閫夋嫨
   - DOMAIN,steamusercontent-a.akamaihd.net,馃殌 鑺傜偣閫夋嫨
@@ -3050,59 +2598,14 @@ rules:
   - DOMAIN-SUFFIX,wikiversity.org,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,wikivoyage.org,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,wiktionary.org,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,zoom.us,馃殌 鑺傜偣閫夋嫨
+  - DOMAIN-SUFFIX,zoomgov.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,neulion.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,icntv.xyz,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,flzbcdn.xyz,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,ocnttv.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,vikacg.com,馃殌 鑺傜偣閫夋嫨
   - DOMAIN-SUFFIX,picjs.xyz,馃殌 鑺傜偣閫夋嫨
-# 鐩磋繛鍒楄〃
-# MyList
-# CN鍩熷悕鐩磋繛(涓�鍥絴鍏�鍙竱缃戠粶)
-# 涓�鍥藉浗鍐呭父瑙佸煙鍚嶅叧閿�璇嶇洿杩�
-# 360
-# 4399
-# 58
-# Alibaba
-# Baidu
-# Bilibili
-# Blizzard
-# ByteDance
-# CCTV
-# ChinaNet
-# DiDi
-# Douyu 鏂楅奔
-# Epic
-# HuaWei
-# Iflytek 绉戝ぇ璁�椋�
-# Iqiyi
-# JD
-# Kingsoft
-# Kuaishou 蹇�鎵�
-# Meitu
-# LeTV 涔愯��
-# MGTV 鑺掓灉TV
-# MI
-# NetEase
-# PPTV銆丳PLive
-# PDD 鎷煎�氬��
-# Sina
-# Sohu Sogo
-# Sony
-# SteamCN
-# Tencent
-# Vip 鍞�鍝佷細
-# Ximalaya 鍠滈┈鎷夐泤
-# Xunlei 杩呴浄
-# YYeTs 浜轰汉褰辫��
-# Private Tracker
-# TeamViewer
-# Public Direct CDN 鍏�鍏辩洿杩�
-#DOMAIN-SUFFIX,ajax.aspnetcdn.com
-#DOMAIN-SUFFIX,ajax.cloudflare.com
-#DOMAIN-SUFFIX,cdnjs.cloudflare.com
-#DOMAIN-SUFFIX,code.jquery.com
-# AccelerateDirectSites
   - DOMAIN-SUFFIX,13th.tech,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,423down.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,bokecc.com,馃幆 鍏ㄧ悆鐩磋繛
@@ -3118,11 +2621,12 @@ rules:
   - DOMAIN-SUFFIX,pdfwifi.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,zhenguanyu.biz,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,zhenguanyu.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,snapdrop.net,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,tebex.io,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,cn,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,xn--fiqs8s,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,xn--55qx5d,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,xn--io0a7i,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-KEYWORD,-cn,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-KEYWORD,360buy,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-KEYWORD,alicdn,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-KEYWORD,alimama,馃幆 鍏ㄧ悆鐩磋繛
@@ -3169,6 +2673,7 @@ rules:
   - DOMAIN-SUFFIX,aliyuncdn.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,aliyuncs.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,aliyundrive.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,aliyundrive.net,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,amap.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,autonavi.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,dingtalk.com,馃幆 鍏ㄧ悆鐩磋繛
@@ -3208,6 +2713,8 @@ rules:
   - DOMAIN-SUFFIX,biliapi.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,biliapi.net,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,bilibili.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,bilibili.co,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,biliintl.co,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,biligame.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,biligame.net,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,bilivideo.com,馃幆 鍏ㄧ悆鐩磋繛
@@ -3215,9 +2722,6 @@ rules:
   - DOMAIN-SUFFIX,hdslb.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,im9.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,smtcdns.net,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,battle.net,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,battlenet.com,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,blizzard.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,amemv.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,bdxiguaimg.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,bdxiguastatic.com,馃幆 鍏ㄧ悆鐩磋繛
@@ -3232,6 +2736,7 @@ rules:
   - DOMAIN-SUFFIX,bytetos.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,bytexservice.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,douyin.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,douyincdn.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,douyinpic.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,douyinstatic.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,douyinvod.com,馃幆 鍏ㄧ悆鐩磋繛
@@ -3280,12 +2785,25 @@ rules:
   - DOMAIN-SUFFIX,dbankcdn.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,hc-cdn.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,hicloud.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,hihonor.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,huawei.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,huaweicloud.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,huaweishop.net,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,hwccpc.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,vmall.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,vmallres.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,allawnfs.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,allawno.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,allawntech.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,coloros.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,heytap.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,heytapcs.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,heytapdownload.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,heytapimage.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,heytapmobi.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,oppo.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,oppoer.me,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,oppomobile.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,iflyink.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,iflyrec.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,iflytek.com,馃幆 鍏ㄧ悆鐩磋繛
@@ -3385,6 +2903,7 @@ rules:
   - DOMAIN,st.dl.bscstorage.net,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN,st.dl.eccdnx.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN,st.dl.pinyuncloud.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN,xz.pphimalayanrt.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN,steampipe.steamcontent.tnkjmec.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN,steampowered.com.8686c.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN,steamstatic.com.8686c.com,馃幆 鍏ㄧ悆鐩磋繛
@@ -3436,46 +2955,7 @@ rules:
   - DOMAIN-SUFFIX,zmzapi.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,zmzapi.net,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,zmzfile.com,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-KEYWORD,announce,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-KEYWORD,torrent,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-KEYWORD,tracker,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,animebytes.tv,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,animetorrents.me,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,awesome-hd.me,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,beitai.pt,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,bittorrent.com,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,broadcasthe.net,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,chdbits.co,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,classix-unlimited.co.uk,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,empornium.me,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,gazellegames.net,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,hd4fans.org,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,hdchina.org,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,hdhome.org,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,hdsky.me,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,hdtime.org,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,hdzone.me,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,icetorrent.org,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,jpopsuki.eu,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,keepfrds.com,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,leaguehd.com,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,m-team.cc,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,madsrevolution.net,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,msg.vg,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,nanyangpt.com,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,ncore.cc,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,open.cd,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,ourbits.club,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,passthepopcorn.me,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,privatehd.to,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,pthome.net,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,redacted.ch,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,springsunday.net,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,tjupt.org,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,totheglory.im,馃幆 鍏ㄧ悆鐩磋繛
-  - DOMAIN-SUFFIX,trontv.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,teamviewer.com,馃幆 鍏ㄧ悆鐩磋繛
-  - IP-CIDR,109.239.140.0/24,馃幆 鍏ㄧ悆鐩磋繛,no-resolve
   - IP-CIDR,139.220.243.27/32,馃幆 鍏ㄧ悆鐩磋繛,no-resolve
   - IP-CIDR,172.16.102.56/32,馃幆 鍏ㄧ悆鐩磋繛,no-resolve
   - IP-CIDR,185.188.32.1/28,馃幆 鍏ㄧ悆鐩磋繛,no-resolve
@@ -3489,6 +2969,10 @@ rules:
   - DOMAIN-SUFFIX,jiasule.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,staticfile.org,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,upaiyun.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,doh.pub,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,dns.alidns.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,doh.360.cn,馃幆 鍏ㄧ悆鐩磋繛
+  - IP-CIDR,1.12.12.12/32,馃幆 鍏ㄧ悆鐩磋繛,no-resolve
   - DOMAIN-SUFFIX,10010.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,115.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,12306.com,馃幆 鍏ㄧ悆鐩磋繛
@@ -3518,6 +3002,7 @@ rules:
   - DOMAIN-SUFFIX,biqudu.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,biquge.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,bitauto.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,bosszhipin.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,c-ctrip.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,camera360.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,cdnmama.com,馃幆 鍏ㄧ悆鐩磋繛
@@ -3553,6 +3038,7 @@ rules:
   - DOMAIN-SUFFIX,eastday.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,eastmoney.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,ecitic.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,element-plus.org,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,ewqcxz.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,fang.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,fantasy.tv,馃幆 鍏ㄧ悆鐩磋繛
@@ -3631,6 +3117,7 @@ rules:
   - DOMAIN-SUFFIX,nruan.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,nuomi.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,onedns.net,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,oneplus.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,onlinedown.net,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,oracle.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,oschina.net,馃幆 鍏ㄧ悆鐩磋繛
@@ -3653,6 +3140,7 @@ rules:
   - DOMAIN-SUFFIX,quanmin.tv,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,qunar.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,qunarzz.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,realme.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,repaik.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,ruguoapp.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,runoob.com,馃幆 鍏ㄧ悆鐩磋繛
@@ -3686,6 +3174,7 @@ rules:
   - DOMAIN-SUFFIX,upyun.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,uxengine.net,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,videocc.net,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,vivo.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,wandoujia.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,weather.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,weico.cc,馃幆 鍏ㄧ悆鐩磋繛
@@ -3722,15 +3211,9 @@ rules:
   - DOMAIN-SUFFIX,zhaopin.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,zhihu.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,zhimg.com,馃幆 鍏ㄧ悆鐩磋繛
+  - DOMAIN-SUFFIX,zhipin.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,zhongsou.com,馃幆 鍏ㄧ悆鐩磋繛
   - DOMAIN-SUFFIX,zhuihd.com,馃幆 鍏ㄧ悆鐩磋繛
-# 涓�鍥戒簯鏈嶅姟鍟唅p绔�
-# 闃块噷
-# 鑵捐�� qq
-# 鐧惧害 Baidu
-# 鍗庝负 huwei
-# 缃戞槗 NetEase
-# 360
   - IP-CIDR,8.128.0.0/10,馃幆 鍏ㄧ悆鐩磋繛,no-resolve
   - IP-CIDR,8.208.0.0/12,馃幆 鍏ㄧ悆鐩磋繛,no-resolve
   - IP-CIDR,14.1.112.0/22,馃幆 鍏ㄧ悆鐩磋繛,no-resolve
