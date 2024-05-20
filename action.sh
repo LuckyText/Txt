@@ -23,7 +23,6 @@ run() {
     fi
     
     if curl -sL --fail "https://freenode.openrunner.net/uploads/${year}${month}${day}-clash.yaml" -o 5.txt; then
-    sed -e '/  - DOMAIN-SUFFIX,admob.com,全球拦截/d' 5.txt > 5.txt
     sed -e '/  - DOMAIN-SUFFIX,admob.com,🍃 应用净化/d' 5.txt > 5
     fi
     
